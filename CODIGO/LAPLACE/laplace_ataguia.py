@@ -59,7 +59,7 @@ def laplace (caso, nombre, grilla):
     tolerance = 1e-6
     max_iterations = 100000
 
-    print(pd.DataFrame(potential))
+    #print(pd.DataFrame(potential))
 
     for it in range(max_iterations):
         potential_old = potential.copy()
@@ -194,12 +194,9 @@ def laplace (caso, nombre, grilla):
     plt.yticks([])
 
     plt.tight_layout()
-    plt.savefig(f"laplace_{nombre}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
+    plt.savefig(f"INFORME/GRAFICOS/laplace_{nombre}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
 
     print(f'listo {nombre}')
     print('')
 
-#laplace(caso_1, 'caso_1', 60)
-#laplace(caso_2, 'caso_2', 60)
-#laplace(caso_3, 'caso_3', 60)
-laplace(caso_ejemplo, 'caso_ejemplo_final', 60) 
+
