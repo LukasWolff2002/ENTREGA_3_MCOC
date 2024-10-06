@@ -98,7 +98,7 @@ def presiones_ataguia(caso, nombre, altura_rel, extension):
     izquierda = {Altura_agua_iz: 0}
     derecha = {}
 
-    ax, pendientes, coordenadas = graficar(caso, 'nombre', altura_rel)
+    ax, pendientes, coordenadas = graficar(caso, nombre, altura_rel, 150)
 
     # Convertir las claves del diccionario en una lista
     coor = coordenadas[-1]
@@ -183,84 +183,14 @@ def presiones_ataguia(caso, nombre, altura_rel, extension):
     neto_ordenada = sorted(neto, key=lambda x: x[0], reverse=True)
 
 
-    # graficar_diccionario(ax, izquierda, False, color='blue')
-    # graficar_diccionario(ax, derecha, True, color='blue')
-    graficar_lista(ax, neto_ordenada, color='red')
-
-    x = np.array([sublista[0] for sublista in neto_ordenada])
-    y = np.array([105 - sublista[1] for sublista in neto_ordenada])
-
-    # Calcular el área bajo la curva usando la regla de Simpson
-    area = simps(y, x)
-
-    # Centroide en x: x_bar = (1/Area) * ∫ x * y dx
-    x_bar = simps(x * y, x) / area
-
-    # Centroide en y: y_bar = (1/Area) * ∫ (1/2) * y^2 dx
-    y_bar = simps(0.5 * y**2, x) / area
-
-    print(f"Centroide: x_bar = {x_bar}, y_bar = {y_bar}")
-
-    #Ahora grafico el centroide
-
-    # agregar_linea_horizontal(ax, x_bar + altura_rel, 0, 210, 'red') #Linea de A1
+    graficar_diccionario(ax, izquierda, False, color='blue')
+    graficar_diccionario(ax, derecha, True, color='blue')
     
-    # Quiero obtener las presiones en ciertos puntos
-
-    x_known = list(izquierda.keys())
-    y_known = list(izquierda.values())
-
-    interpolacion = interp1d(x_known, y_known, kind='linear')
-
-    A = ((B1+C1)*1000)/200 +altura_rel-1
-    A = 105 - encontrar_y(interpolacion,ceil(A) )
-    print(f'Presion en A: {A}')
-
-    B = ((C1)*1000)/200 +altura_rel
-    B = 105 - encontrar_y(interpolacion, ceil(B) )
-    print(f'Presion en B: {B}')
-
-    C = ((C2+B2)*1000)/200 +altura_rel
-    C = 105 - encontrar_y(interpolacion, ceil(C) )
-    print(f'Presion en C: {C}')
-
-    D = ((C2)*1000)/200 +altura_rel+1
-    D = 105 - encontrar_y(interpolacion, ceil(D) )
-    print(f'Presion en D: {D}')
-
-    E = 105 - min(y_known)
-    print(f'Presion en E: {E}')
-
-    x_known = list(derecha.keys())
-    y_known = list(derecha.values())
-
-    interpolacion = interp1d(x_known, y_known, kind='linear')
-
-    F = max(y_known) - 105
-    print(f'Presion en F: {F}')
-
-    G = ((C2)*1000)/200 +altura_rel+1
-    G = encontrar_y(interpolacion, ceil(G) ) - 105
-    print(f'Presion en G: {G}')
-
-    H = ((C2+B2)*1000)/200 +altura_rel
-    H = encontrar_y(interpolacion, ceil(H) ) - 105
-    print(f'Presion en H: {H}')
-
-
-
-
-
-
-
-    
-
-
     # Llamar a la función para graficar las líneas
     graficar_lineas_con_pendientes(ax, coordenadas, pendientes, color='green', grosor=1)
 
     # Guardar la figura usando el objeto ax
-    plt.savefig(f"{nombre+extension}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
+    plt.savefig(f"INFORME/GRAFICOS/{nombre+extension}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
 
 
 
@@ -269,7 +199,7 @@ def presiones_ataguia(caso, nombre, altura_rel, extension):
 
     #luego al lado derecho
 
-presiones_ataguia(caso_1, 'caso_1', altura_rel, '_presion_ataguia_neta')
+#presiones_ataguia(caso_1, 'caso_1', altura_rel, '_presion_ataguia_neta')
 # presiones_ataguia(caso_2, 'caso_2', altura_rel, '_centroide_y')
 # presiones_ataguia(caso_3, 'caso_3', altura_rel, '_centroide_y')
     

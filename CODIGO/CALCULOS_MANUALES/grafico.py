@@ -13,7 +13,7 @@ from lineas_equipotenciales import agregar_lineas_equipotenciales, extraer_pendi
 
 # Dimensiones de la hoja A4 en milímetros
 ancho_a4_mm = 210
-alto_a4_mm = 150
+
 
 # Tamaño de la cuadrícula en milímetros
 tamanio_cuadricula_mm = 5
@@ -43,7 +43,7 @@ def crear_hoja_cuadriculada(ancho, alto, tamanio_cuadricula):
 
     return ax
 
-def graficar(caso, nombre, altura_base):
+def graficar(caso, nombre, altura_base, alto_a4_mm):
     d = (caso['d']*1000) / 200
     ax = crear_hoja_cuadriculada(ancho_a4_mm, alto_a4_mm, tamanio_cuadricula_mm)
     #agregar_linea_horizontal(ax, 0.5 + altura_base, 0, 210, 'black')  # Linea de fondo
@@ -123,6 +123,20 @@ def graficar(caso, nombre, altura_base):
     for i in range(mitad, len(claves)):
         pendientes_4[claves[i]] = -10.0
 
+    #Corrijo el modleo
+    if nombre == 'caso_1':
+        coordenadas_4['punto_1'] = (0, 30+altura_base)
+        coordenadas_4['punto_6'] = (210, 15+altura_base)
+
+
+    if nombre == 'caso_2':
+        coordenadas_4['punto_1'] = (0, 35+altura_base)
+        coordenadas_4['punto_6'] = (210, 20+altura_base)
+
+    if nombre == 'caso_3':
+        coordenadas_4['punto_1'] = (0, 40+altura_base)
+        coordenadas_4['punto_6'] = (210, 30+altura_base)
+
 
     pendientes = [pendientes_4, pendientes_1, pendientes_2, pendientes_3, pendientes_ataguia]
     coordenadas = [coordenadas_4, coordenadas_1, coordenadas_2, coordenadas_3, coordenadas_ataguia]
@@ -136,7 +150,7 @@ def graficar(caso, nombre, altura_base):
     return ax, pendientes, coordenadas
 
 # Ejemplo de uso
-# graficar(caso_1, 'caso_1', 50)
-# graficar(caso_2, 'caso_2', 50)
-# graficar(caso_3, 'caso_3', 50)
+#graficar(caso_1, 'caso_1', 0, 150)
+#graficar(caso_2, 'caso_2', 0, 150)
+#graficar(caso_3, 'caso_3', 0, 150)
 

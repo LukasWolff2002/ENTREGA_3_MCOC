@@ -78,12 +78,12 @@ def presiones_poros(caso, nombre, altura_rel, extension):
     delta_h = Delta_H/Nd
     
 
-    ax, pendientes, coordenadas = graficar(caso, 'nombre', altura_rel)
+    ax, pendientes, coordenadas = graficar(caso, nombre, altura_rel, 150)
 
     #las coordenadas de la ataguia son
     coordenadas_ata = coordenadas[-1]
-    print('')
-    print(coordenadas_ata)
+    #print('')
+    #print(coordenadas_ata)
 
 
 
@@ -103,7 +103,7 @@ def presiones_poros(caso, nombre, altura_rel, extension):
             u = (hp*gamma_agua)/1000
             mapa_calor[diccionarios[elemento]]= u
 
-    print(mapa_calor)
+    #print(mapa_calor)
 
     coordenadas_l = [(0, (C1*1000)/200 + altura_rel), (105, (C1*1000)/200+altura_rel), (105, ((C2)*1000)/200+altura_rel), (210, ((C2)*1000)/200+altura_rel), (210, 0 +altura_rel), (0, 0+altura_rel)]
     
@@ -120,11 +120,11 @@ def presiones_poros(caso, nombre, altura_rel, extension):
     graficar_lineas_con_pendientes(ax, coordenadas, pendientes, color='green', grosor=1)
 
     # Guardar la figura usando el objeto ax
-    plt.savefig(f"{nombre+extension}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
+    plt.savefig(f"INFORME/GRAFICOS/{nombre+extension}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
 
-presiones_poros(caso_1, 'caso_1', altura_rel, '_mapa_calor')
-presiones_poros(caso_2, 'caso_2', altura_rel, '_mapa_calor')
-presiones_poros(caso_3, 'caso_3', altura_rel, '_mapa_calor')
+#presiones_poros(caso_1, 'caso_1', altura_rel, '_mapa_calor')
+#presiones_poros(caso_2, 'caso_2', altura_rel, '_mapa_calor')
+#presiones_poros(caso_3, 'caso_3', altura_rel, '_mapa_calor')
     
 
     
