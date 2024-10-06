@@ -72,3 +72,28 @@ presiones_poros(caso_1, 'caso_1', 0, '_presion_poros')
 presiones_poros(caso_2, 'caso_2', 0, '_presion_poros')
 presiones_poros(caso_3, 'caso_3', 0, '_presion_poros')
 
+#Calculo el maximo gradiente hidraulico
+from max_gradiente_hidraulico import max_gradiente_hidraulico
+print('Calculando maximo gradiente hidraulico')
+print('Caso 1')
+max_gradiente_hidraulico(caso_1, 'caso_1')
+print('')
+print('Caso 2')
+max_gradiente_hidraulico(caso_2, 'caso_2')
+print('')
+print('Caso 3')
+max_gradiente_hidraulico(caso_3, 'caso_3')
+
+#Calculo el caudal de infiltracion
+from infiltracion import infiltracion
+print('Calculando caudal de infiltracion')
+print('Caso 1')
+infiltracion(caso_1, 'caso_1')
+print('')
+print('Caso 2')
+infiltracion(caso_2, 'caso_2')
+print('')
+print('Caso 3')
+infiltracion(caso_3, 'caso_3')
+
+

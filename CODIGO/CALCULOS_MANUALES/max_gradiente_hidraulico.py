@@ -25,7 +25,3 @@ def max_gradiente_hidraulico(caso, nombre):
     else:
         print('No hay licuefaccion')
     print('')
-
-max_gradiente_hidraulico(caso_1, 'caso_1')
-max_gradiente_hidraulico(caso_2, 'caso_2')
-max_gradiente_hidraulico(caso_3, 'caso_3')
