@@ -10,7 +10,7 @@ import pandas as pd
 
 def laplace (caso, nombre, grilla):
     print(f'calculando {nombre}')
-    C2 = caso['c1']
+    C2 = caso['c2']
     C2_real = caso['c2']
     C1 = caso['c1']
     B2 = caso['b2']
@@ -25,8 +25,8 @@ def laplace (caso, nombre, grilla):
     #print(dx,dy)
 
     #Defino algunas cosas
-    Potencial_incial = (B1)*100 #Ingresar la altura de agua en cm
-    Potencial_final = (B2)*100 #Ingresar la altura de agua en cm
+    Potencial_incial = ((C1+B1))*100 #Ingresar la altura de agua en cm
+    Potencial_final = ((C2+B2))*100 #Ingresar la altura de agua en cm
 
     #Transformaciones a grillas
     #c2 esta en metros, por lo tanto, al pasar a grilla
@@ -41,9 +41,9 @@ def laplace (caso, nombre, grilla):
     potential[0, nx//2:] = Potencial_incial     # Borde superior: potencial alto
 
     if C2_real == C1:
-        potential[0, :ny//2] = Potencial_final
+        potential[0, :nx//2] = Potencial_final
     else:
-        potential[0:c2, :ny//2] = Potencial_final   # Borde superior: potencial alto
+        potential[0:c2, :nx//2] = Potencial_final   # Borde superior: potencial alto
         K[:c2-1, :nx//2] = 1e-15      # Borde superior: potencial alto
 
 
@@ -138,6 +138,7 @@ def laplace (caso, nombre, grilla):
 
     #Obtengo las velocidades de salida:
     salida_velocity_y = velocity_y[c2]
+    #print(pd.DataFrame(salida_velocity_y))
 
     salida_velocity_y = salida_velocity_y[1:ny//2]
     #print(f'Flujo de salida en y es{salida_velocity_y}')
@@ -147,7 +148,11 @@ def laplace (caso, nombre, grilla):
     espaciado = lx/grilla
     #print(f'El espaciado es {espaciado}')
     #print('')
-    q = ((np.sum(salida_velocity_y)*espaciado*-1)/(C1*10/2))
+
+    if nombre != 'caso_ejemplo':
+        q = ((np.sum(salida_velocity_y)*espaciado*-1)/(C1*200/2))*24*3600
+    else:
+        q = ((np.sum(salida_velocity_y)*espaciado*-1)/(C1*10/2))*24*3600
     print(f'El flujo de salida es {q = } m/s')
 
     # Crear la grilla de coordenadas para visualizar
@@ -185,7 +190,7 @@ def laplace (caso, nombre, grilla):
     # Subplot para las líneas de flujo (streamlines)
     plt.subplot(1, 3, 3)
     plt.streamplot(X, Y, velocity_x, velocity_y, linewidth=1, cmap='viridis')
-    contour_lines = plt.contour(X, Y, masked_potential/100, levels=12, colors='red')
+    contour_lines = plt.contour(X, Y, (masked_potential/100)-(C1+B1)+(C2+B2), levels=12, colors='red')
     plt.clabel(contour_lines, inline=True, fontsize=8, fmt='%1.1f')  # Etiquetas de las líneas
     plt.title("Lineas Equipotenciales y FLujo")
     plt.gca().invert_xaxis()
@@ -194,9 +199,7 @@ def laplace (caso, nombre, grilla):
     plt.yticks([])
 
     plt.tight_layout()
-    plt.savefig(f"INFORME/GRAFICOS/laplace_{nombre}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
+    plt.savefig(f"laplace_{nombre}.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
 
     print(f'listo {nombre}')
     print('')
-
-

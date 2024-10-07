@@ -17,5 +17,14 @@ c2 = 17.5 #cm
 d = c2 - 12
 caso_1 = {'b1': b1, 'c1': c1, 'b2': b2, 'c2': c2, 'd': d, 'k': k}
 
+#a1 = 0.8
+b1 = 14.5 #cm
+c1 = 15.5 #cm
+#a2 = 7.6
+b2 = 2.5 #cm #no se observaba agua
+c2 = 12.5 #cm
+d = c2 - 12
+caso_licuefaccion = {'b1': b1, 'c1': c1, 'b2': b2, 'c2': c2, 'd': d, 'k': k}
+
 
 

@@ -1,14 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from variables import caso_1
+from variables import caso_1, caso_licuefaccion
 import pandas as pd
 
-#Aun se puede mejorar el codigo hacienco que lx sea 13.5*2
-#De esta forma, es nesesario modificar la grilla y matriz, ya que no va a ser una grilla cuadrada
+#Las grillas deben ser cuadradas, lo cual no se esta cumpliendo actualmente
+#En los lugares impermeables, el gradiente debe ser 0
 
-def laplace (caso, nombre, grilla, factor_correccion, factor):
+
+
+def laplace (caso, nombre, grilla):
     print(f'calculando {nombre}')
-    C2 = caso['c1']
+    C2 = caso['c2']
     C2_real = caso['c2']
     C1 = caso['c1']
     B2 = caso['b2']
@@ -23,13 +25,12 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     #print(dx,dy)
 
     #Defino algunas cosas
-    Potencial_incial = (B1)*100 #Ingresar la altura de agua en cm
-    Potencial_final = (B2)*100 #Ingresar la altura de agua en cm
+    Potencial_incial = ((B1))*100 #Ingresar la altura de agua en cm
+    Potencial_final = ((B2))*100 #Ingresar la altura de agua en cm
 
     #Transformaciones a grillas
     #c2 esta en metros, por lo tanto, al pasar a grilla
     c2 = int((1-(C2_real/ly))*ny)
-    print(c2)
     #print(c2)
     D = int((1-(D/ly))*ny)
 
@@ -37,48 +38,23 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     potential = np.ones((ny, nx))
     K = k*np.ones((ny, nx))
 
-    # Condiciones de borde: potencial alto en algunos bordes
-    #potential[nx//2:, -1] = 100     # Borde izquierdo: impermeable (potencial bajo)
-    #potential[0, :nx//2] = 30     # Borde superior: potencial alto
-    #potential[:nx//2, -1] = 0     # Borde izquierdo: impermeable (potencial bajo)
-    #potential[-1, :] = 0    # Borde inferior: impermeable
-    #potential[:, 0] = 0    # Borde derecho: impermeable (potencial bajo)
+    potential[0, nx//2:] = Potencial_incial     # Borde superior: potencial alto
 
-    if C2 != ly:
-
-        potential[0, nx//2:] = Potencial_incial     # Borde superior: potencial alto
-        potential[c2-1, :ny//2] = Potencial_final   # Borde superior: potencial alto
-
-        potential[:, -1] = 0     # Borde izquierdo: impermeable (potencial bajo)
-        K[:, -1] = 1e-15     # Borde izquierdo: impermeable (permeabilidad baja)
-        potential[-1, :] = 0    # Borde inferior: impermeable
-        K[-1, :] = 1e-15     # Borde inferior: impermeable
-        potential[:, 0] = 0    # Borde derecho: impermeable (potencial bajo)
-        K[:, 0] = 1e-15     # Borde derecho: impermeable
-        potential[:D, ny//2] = 0    #Ataguia
-        K[:D, ny//2] = 1e-15     #Ataguia
-        potential[:c2-1, :nx//2] = np.nan     # Borde superior: potencial alto
-        K[:c2-1, :nx//2] = 1e-15      # Borde superior: potencial alto
-
+    if C2_real == C1:
+        potential[0, :nx//2] = Potencial_final
     else:
-
-        potential[0, nx//2:] = Potencial_incial     # Borde superior: potencial alto
-        potential[0:c2, :ny//2] = Potencial_final   # Borde superior: potencial alto
-
-        potential[:, -1] = 0     # Borde izquierdo: impermeable (potencial bajo)
-        K[:, -1] = 1e-15      # Borde izquierdo: impermeable (permeabilidad baja)
-        potential[-1:, :] = 0    # Borde inferior: impermeable
-        K[-1:, :] = 1e-15     # Borde inferior: impermeable
-        potential[:, 0] = 0    # Borde derecho: impermeable (potencial bajo)
-        K[:, 0] = 1e-15     # Borde derecho: impermeable
-        potential[:D, ny//2] = 0    #Ataguia
-        K[:D, ny//2] = 1e-15     #Ataguia
+        potential[0:c2, :nx//2] = Potencial_final   # Borde superior: potencial alto
         K[:c2-1, :nx//2] = 1e-15      # Borde superior: potencial alto
 
-    #print(pd.DataFrame(potential))
-    #print('')
-    #print(pd.DataFrame(K))
 
+    potential[:, -1] = 0     # Borde izquierdo: impermeable (potencial bajo)
+    K[:, -1] = 1e-15      # Borde izquierdo: impermeable (permeabilidad baja)
+    potential[-1:, :] = 0    # Borde inferior: impermeable
+    K[-1:, :] = 1e-15     # Borde inferior: impermeable
+    potential[:, 0] = 0    # Borde derecho: impermeable (potencial bajo)
+    K[:, 0] = 1e-15     # Borde derecho: impermeable
+    potential[:D, ny//2] = 0    #Ataguia
+    K[:D, ny//2] = 1e-15     #Ataguia
     # Resolución iterativa de la ecuación de Laplace
     tolerance = 1e-6
     max_iterations = 100000
@@ -113,9 +89,7 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
                 elif i<= c2-1 and j < ny//2:  # Borde superior
                     potential[i, j] = Potencial_final
                     continue
-
                 
-
                 else:
                     # Si estamos en una celda adyacente a un borde, manejamos las actualizaciones evitando las celdas con potencial 0
                     suma_potenciales = 0
@@ -126,31 +100,15 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
                         suma_potenciales += potential[i-1, j]
                         vecinos_validos += 1
 
-                    # Revisamos el vecino de abajo
-                    #Agregar dos condiciones, si estoy bajo o sobre la ataguia
-                    #if i < nx-1 and potential[i+1, j] > 1 and j < 10:
-                    #    print(f'se cumple la condicion con {i=}')
-                    #    suma_potenciales += potential[i+1, j]
-                    #    vecinos_validos += 1
-                    
-
                     if i < ny-2 and potential[i+1, j] > 1:
                         #print(f'se cumple la condicion con {i=}')
                         suma_potenciales += potential[i+1, j]
                         vecinos_validos += 1
 
-                        
-
-                    #----------------------
-
                     # Revisamos el vecino de la izquierda
                     if j > 0 and potential[i, j-1] > 1:
                         suma_potenciales += potential[i, j-1]
                         vecinos_validos += 1
-
-                    #if j > 0 and potential[i, j-1] > 2 and i >= 30:
-                    #    suma_potenciales += potential[i, j-1]
-                    #    vecinos_validos += 1
 
                     # Revisamos el vecino de la derecha
                     if j < nx-1 and potential[i, j+1] > 1:
@@ -160,9 +118,6 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
                     # Actualizamos el potencial si tenemos al menos un vecino válido
                     if vecinos_validos > 0:
                         potential[i, j] = suma_potenciales / vecinos_validos
-
-
-
         
         # Comprobamos la convergencia
         if np.max(np.abs(potential - potential_old)) < tolerance:
@@ -183,16 +138,8 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
 
     #Obtengo las velocidades de salida:
     salida_velocity_y = velocity_y[c2]
+    #print(pd.DataFrame(salida_velocity_y))
 
-    #print(pd.DataFrame(potential))
-            
-    #Ok, la salida se de en el vector de velocidad y, donde debe ser el valor negativo
-
-    #print('')
-    #print(f'Flujo de salida en y es{salida_velocity_y}')
-
-    #Ahora saco los vectores de salida
-    #print('')
     salida_velocity_y = salida_velocity_y[1:ny//2]
     #print(f'Flujo de salida en y es{salida_velocity_y}')
 
@@ -201,6 +148,7 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     espaciado = lx/grilla
     #print(f'El espaciado es {espaciado}')
     #print('')
+
     q = ((np.sum(salida_velocity_y)*espaciado*-1)/(1000*C1))
     print(f'El flujo de salida es {q = } cm/s')
 
@@ -232,16 +180,14 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     plt.subplot(1, 3, 2)
     plt.contourf(X_inverted, Y_inverted, masked_potential/100, levels=18, cmap='Blues')
     plt.colorbar(label="Potential [cm]")
-    plt.title("Matriz de Potencial [cm]")
+    plt.title("Matriz de Potencial")
     plt.xticks([])
     plt.yticks([])
-
-    
 
     # Subplot para las líneas de flujo (streamlines)
     plt.subplot(1, 3, 3)
     plt.streamplot(X, Y, velocity_x, velocity_y, linewidth=1, cmap='viridis')
-    contour_lines = plt.contour(X, Y, masked_potential/100, levels=12, colors='red')
+    contour_lines = plt.contour(X, Y, (masked_potential/100), levels=12, colors='red')
     plt.clabel(contour_lines, inline=True, fontsize=8, fmt='%1.1f')  # Etiquetas de las líneas
     plt.title("Lineas Equipotenciales y FLujo")
     plt.gca().invert_xaxis()
@@ -250,10 +196,10 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     plt.yticks([])
 
     plt.tight_layout()
-    plt.savefig(f"laplace_escala_cm.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
+    plt.savefig(f"laplace_{nombre}_escala_cm.jpg", format='jpg', bbox_inches='tight', pad_inches=0)
 
     print(f'listo {nombre}')
     print('')
 
-laplace(caso_1, 'caso_1', 60, False, 0) 
-
+laplace(caso_1, 'caso_1', 40)
+laplace(caso_licuefaccion, 'caso_licuefaccion', 40)
