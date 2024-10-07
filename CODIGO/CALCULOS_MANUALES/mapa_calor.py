@@ -16,7 +16,7 @@ def crear_mascara_en_forma_L(grid_x, grid_y, coordenadas_l):
     
     return mascara
 
-def agregar_mapa_calor_con_mascara_L(ax, diccionario_presion, coordenadas_l, cmap='YlOrRd'):
+def agregar_mapa_calor_con_mascara_L(ax, diccionario_presion, coordenadas_l, nombre, cmap='YlOrRd'):
     # Extraer las coordenadas (x, y) y las presiones
     x_coords = np.array([key[0] for key in diccionario_presion.keys()])
     y_coords = np.array([key[1] for key in diccionario_presion.keys()])
@@ -46,13 +46,15 @@ def agregar_mapa_calor_con_mascara_L(ax, diccionario_presion, coordenadas_l, cma
     poligono_l = plt.Polygon(coordenadas_l, fill=None, edgecolor='black', linewidth=2)
     ax.add_patch(poligono_l)
 
+    if nombre != 'caso_licuefaccion':
+
     # Agregar barra de color de forma horizontal
-    cbar = plt.colorbar(heatmap, ax=ax, orientation='horizontal', fraction=0.05, pad=0.08)
+        cbar = plt.colorbar(heatmap, ax=ax, orientation='horizontal', fraction=0.05, pad=0.08)
     
-    # Ajustar la escala de la leyenda de presión
-    cbar.set_label('Presión KPa', fontsize=16)  # Etiqueta de la barra de colores
-    cbar.ax.tick_params(labelsize=12)  # Tamaño del texto de la leyenda
-    cbar.set_ticks([vmin, (vmin + vmax) / 2, vmax])  # Ajustar los ticks de la barra de colores
+        # Ajustar la escala de la leyenda de presión
+        cbar.set_label('Presión KPa', fontsize=16)  # Etiqueta de la barra de colores
+        cbar.ax.tick_params(labelsize=12)  # Tamaño del texto de la leyenda
+        cbar.set_ticks([vmin, (vmin + vmax) / 2, vmax])  # Ajustar los ticks de la barra de colores
 
 
 
@@ -107,7 +109,7 @@ def presiones_poros(caso, nombre, altura_rel, extension):
 
     coordenadas_l = [(0, (C1*1000)/200 + altura_rel), (105, (C1*1000)/200+altura_rel), (105, ((C2)*1000)/200+altura_rel), (210, ((C2)*1000)/200+altura_rel), (210, 0 +altura_rel), (0, 0+altura_rel)]
     
-    agregar_mapa_calor_con_mascara_L(ax, mapa_calor, coordenadas_l)
+    agregar_mapa_calor_con_mascara_L(ax, mapa_calor, coordenadas_l, nombre)
 
 
 

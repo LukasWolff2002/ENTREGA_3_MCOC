@@ -137,6 +137,10 @@ def graficar(caso, nombre, altura_base, alto_a4_mm):
         coordenadas_4['punto_1'] = (0, 40+altura_base)
         coordenadas_4['punto_6'] = (210, 30+altura_base)
 
+    if nombre == 'caso_licuefaccion':
+        coordenadas_4['punto_1'] = (0, 30+altura_base)
+        coordenadas_4['punto_6'] = (210, 25+altura_base)
+
 
     pendientes = [pendientes_4, pendientes_1, pendientes_2, pendientes_3, pendientes_ataguia]
     coordenadas = [coordenadas_4, coordenadas_1, coordenadas_2, coordenadas_3, coordenadas_ataguia]
