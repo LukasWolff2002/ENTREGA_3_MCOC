@@ -4,7 +4,7 @@
 - [ ] Introduccion
 - [ ] Parte 1
     - [ ] Pequeña introduccion
-    - [ ] Teoria (Falta citar)
+    - [x] Teoria 
     - [ ] Resultados (Falta agregar texto que de continuidad)
     - [ ] Analisis de Resultgados
     - [ ] Fuentes de error
