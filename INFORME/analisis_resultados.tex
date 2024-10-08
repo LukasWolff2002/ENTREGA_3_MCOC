@@ -23,9 +23,7 @@
     \end{minipage}
   \end{figure}
 
-\subsection{Presion de Poros}
-
-\subsubsection{Distribucion Presiones}
+\subsubsection{Presion de Poros}
 
 \begin{figure}[H]
     \centering
@@ -121,6 +119,7 @@
         $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
         $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
         $Q_{inf}$ & $43.877$ & $32.431$ & $25.754$ & $[\frac{m^3}{dia}]$\\
+        $k$ & $6.9\times10^{-5}$ & $6.9\times10^{-5}$ & $6.9\times10^{-5}$ & $[\frac{m}{s}]$\\
         \hline
         \end{tabularx}
         \label{tab:Manuales}
@@ -164,6 +163,7 @@
         $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
         $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
         $Q_{inf}$ & $25.410$ & $20.790$ & $13.860$ & $[\frac{m^3}{dia}]$\\
+        $k$ & $6.9\times10^{-5}$ & $6.9\times10^{-5}$ & $6.9\times10^{-5}$ & $[\frac{m}{s}]$\\
         \hline
         \end{tabularx}
         \label{tab:Diferencias}
@@ -172,3 +172,22 @@
 
 \subsection{Resultados Escalamiento}
 
+\subsubsection{Caso de Licuefacción}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{GRAFICOS/caso_licuefaccion_presion_poros.jpg}
+    \caption{Mapa de Calor Licuefaccion}
+    \label{fig:maqueta_licuefaccion}
+\end{figure}
+
+Es interesante notar como se produce un gran aumento de presion bajo la ataguia, lo cual se observa en el video, ya que ese es el punto esperado de falla.
+\\ \\
+Ademas, se calculo el mismo caso segun diferencias finitas:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{GRAFICOS/laplace_caso_licuefaccion_escala_cm.jpg}
+    \caption{Laplace Caso Licuefaccion}
+    \label{fig:maqueta_licuefaccion_diferencias_finitas}
+\end{figure}
