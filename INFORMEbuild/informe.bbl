@@ -1,0 +1,60 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Madanayaka and Sivakugan(2018)]{madanayaka2018}
+T.~A. Madanayaka and N.~Sivakugan.
+\newblock Simple solutions for square and rectangular cofferdam seepage
+  problems.
+\newblock \emph{Canadian Geotechnical Journal}, 2018.
+
+\bibitem[Sumer(2009)]{sumer2009}
+B.~M. Sumer.
+\newblock Liquefaction around marine structures.
+\newblock In \emph{Coastal Structures 2007}, 2009.
+
+\bibitem[Obinna(2020)]{structville}
+Ubani Obinna.
+\newblock Water pressure, piping, and flow nets in cofferdams.
+\newblock 2020.
+\newblock URL
+  \url{https://structville.com/2020/11/water-pressure-flow-nets-cofferdams.html}.
+\newblock Consultado: 07-Oct-2024.
+
+\bibitem[{Shanghai Research Center of Ocean and Shipbuilding
+  Engineering}(2024)]{stability_cofferdam_2024}
+{Key Laboratory of Geotechnical and Underground Engineering} {Shanghai Research
+  Center of Ocean and Shipbuilding Engineering}, {China Shipbuilding NDRI
+  Engineering Co.}
+\newblock Stability analysis of cofferdam with double-wall steel sheet piles
+  under wave action from storm surges.
+\newblock \emph{Water}, 16\penalty0 (8):\penalty0 1181, 2024.
+\newblock \doi{10.3390/w16081181}.
+\newblock URL \url{https://www.mdpi.com/2073-4441/16/8/1181}.
+
+\bibitem[of~Engineering and Science(2021)]{jeas}
+Journal of~Engineering and Applied Science.
+\newblock Effect of zones' dimensions and geometry on seepage through zoned
+  earth dams.
+\newblock \emph{SpringerOpen}, 2021.
+\newblock URL
+  \url{https://jeas.springeropen.com/articles/10.1186/s44147-021-00004-w}.
+\newblock Consultado: 07-Oct-2024.
+
+\bibitem[Budhu(2010)]{budhu_soil_2010}
+Muni Budhu.
+\newblock \emph{Soil Mechanics and Foundations}.
+\newblock John Wiley \& Sons, Hoboken, NJ, 3rd edition edition, 2010.
+\newblock ISBN 978-0-470-55684-9.
+
+\bibitem[Sivakugan(2005)]{sivakugan2005}
+N.~Sivakugan.
+\newblock \emph{Permeability and Seepage}.
+\newblock 2005.
+\newblock URL \url{https://www.geoengineer.org/permeability-seepage}.
+\newblock Consultado: 07-Oct-2024.
+
+\end{thebibliography}
