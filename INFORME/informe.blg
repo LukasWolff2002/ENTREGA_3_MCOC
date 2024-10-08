@@ -1,51 +1,58 @@
-This is BibTeX, Version 0.99d (TeX Live 2024)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: informe.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
+Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: introduccion.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: parte_1.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: parte_2.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: parte_3.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
 A level-1 auxiliary file: anexos.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
 Database file #1: referencias.bib
-You've used 2 entries,
+You've used 3 entries,
             2481 wiz_defined-function locations,
-            566 strings with 4725 characters,
-and the built_in function-call counts, 621 in all, are:
-= -- 47
-> -- 22
-< -- 2
-+ -- 10
-- -- 6
-* -- 31
-:= -- 103
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 4
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 40
-empty$ -- 67
-format.name$ -- 10
-if$ -- 130
+            572 strings with 4801 characters,
+and the built_in function-call counts, 887 in all, are:
+= -- 69
+> -- 29
+< -- 3
++ -- 14
+- -- 8
+* -- 44
+:= -- 146
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 6
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 59
+empty$ -- 97
+format.name$ -- 13
+if$ -- 188
 int.to.chr$ -- 1
-int.to.str$ -- 3
-missing$ -- 2
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 22
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 9
+pop$ -- 33
 preamble$ -- 1
-purify$ -- 2
+purify$ -- 3
 quote$ -- 0
-skip$ -- 24
+skip$ -- 34
 stack$ -- 0
-substring$ -- 4
-swap$ -- 5
+substring$ -- 6
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 18
 warning$ -- 0
-while$ -- 4
+while$ -- 6
 width$ -- 0
-write$ -- 31
+write$ -- 44
