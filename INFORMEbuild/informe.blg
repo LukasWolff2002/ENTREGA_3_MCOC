@@ -11,6 +11,8 @@ Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: parte_2.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: parte_3.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: analisis_resultados.aux
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 A level-1 auxiliary file: anexos.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
@@ -19,7 +21,7 @@ Warning--empty journal in structville
 Warning--empty publisher in sivakugan2005
 You've used 7 entries,
             2481 wiz_defined-function locations,
-            601 strings with 5686 characters,
+            602 strings with 5709 characters,
 and the built_in function-call counts, 2127 in all, are:
 = -- 186
 > -- 65
