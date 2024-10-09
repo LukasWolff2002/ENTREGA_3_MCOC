@@ -1,7 +1,7 @@
 # Cosas por Hacer
 
 - [ ] Resumen
-- [ ] Introduccion
+- [x] Introduccion
 - [ ] Parte 1
     - [ ] Pequeña introduccion
     - [x] Teoria 
