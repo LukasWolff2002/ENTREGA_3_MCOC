@@ -440,11 +440,11 @@ INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
 INPUT C:\Users\felip\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m.vf
@@ -689,6 +689,10 @@ INPUT .\GRAFICOS\caso_licuefaccion_presion_poros.jpg
 INPUT .\GRAFICOS\caso_licuefaccion_presion_poros.jpg
 INPUT .\GRAFICOS\caso_licuefaccion_presion_poros.jpg
 INPUT .\GRAFICOS\caso_licuefaccion_presion_poros.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\GRAFICOS\laplace_caso_licuefaccion_escala_cm.jpg
 INPUT .\GRAFICOS\laplace_caso_licuefaccion_escala_cm.jpg
 INPUT .\GRAFICOS\laplace_caso_licuefaccion_escala_cm.jpg
