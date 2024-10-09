@@ -144,7 +144,11 @@ Como se puede observar, para el caso \ref{fig:caso_1_presion_poros} en la parte 
     \end{minipage}
 \end{figure}
 
+En los diagramas de presión total, se puede observar que para todos los casos la presión en la parte derecha de la ataguía es igual, sin embargo, en la parte derecha a medida que el nivel del suelo aumenta, esta también aumenta. Esto se puede ver en el caso \ref{fig:caso_1_presion_ataguia_total} que la presión en el lado derecho es bajo, mientras que en el caso \ref{fig:caso_3_presion_ataguia_total} la presión es mayor. Los efectos de esto se pueden observar en las presiones efectivas.
+
 \subsubsection{Presiones Efectivas}
+
+Para poder apreciar de mejor manera el efecto de las presiones en la ataguía se diagramaron las presiones efectivas, esto se calcula restando la presión del lado derecho con la presión del lado izquierdo. 
 
 \begin{figure}[H]
     \centering
@@ -152,38 +156,47 @@ Como se puede observar, para el caso \ref{fig:caso_1_presion_poros} en la parte 
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_ataguia_neta.jpg}
         \caption{Caso 1 Presion Ataguia Neta}
+        \label{fig:caso_1_presion_ataguia_neta}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_ataguia_neta.jpg}
         \caption{Caso 2 Presion Ataguia Neta}
+        \label{fig:caso_2_presion_ataguia_neta}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_ataguia_neta.jpg}
         \caption{Caso 3 Presion Ataguia Neta}
+        \label{fig:caso_3_presion_ataguia_neta}
     \end{minipage}
 \end{figure}
 
-\subsubsection{Estabilidad}
+Como se puede observar, a medida que el nivel del suelo va subiendo, la presión en el fondo de la ataguía va disminuyendo, lo que se traduce en una menor presión efectiva. Esto se puede observar en el caso \ref{fig:caso_1_presion_ataguia_neta} donde la presión efectiva es mayor en la parte inferior de la ataguía, mientras que en el caso \ref{fig:caso_3_presion_ataguia_neta} la presión efectiva es menor.
 
+\subsubsection{Estabilidad}
+Finalmente, para poder determinar la estabilidad de la ataguía se calculó el centroide de la ataguía en cada caso. Esto se hizo en base a las presiones efectivas calculadas anteriormente.
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1_centroide_y.jpg}
         \caption{Caso 1 Centroide}
+        \label{fig:caso_1_centroide_y}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2_centroide_y.jpg}
         \caption{Caso 2 Centroide}
+        \label{fig:caso_2_centroide_y}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3_centroide_y.jpg}
         \caption{Caso 3 Centroide}
+        \label{fig:caso_3_centroide_y}
     \end{minipage}
 \end{figure}
 
+Como se puede observar, en el caso \ref{fig:caso_1_centroide_y} el centroide se encuentra en una parte elevada de la ataguía. Esto genera un momento que tiende a voltear la ataguía, lo que conlleva a una menor estabilidad. Luego, a medida que el nivel de agua y suelo van aumentando el centroide se va desplazando hacia abajo, lo que lleva a una mayor estabilidad y seguridad. 
 
