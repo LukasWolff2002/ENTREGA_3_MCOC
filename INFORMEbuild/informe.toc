@@ -22,21 +22,12 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Diferencias Hacia Adelante}{9}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Diferencias Hacia Atrás}{9}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Diferencias Centrales}{9}{subsubsection.3.2.3}%
-\contentsline {part}{III\hspace {1em}Modelo Escala}{11}{part.3}%
-\contentsline {section}{\numberline {4}Resultados}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Calculo Permeabilidad Muestra}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Licuefaccion}{11}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Aplicacion Diferencias Finitas}{12}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Análisis de Resultados}{13}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Resultados Manuales P1E0}{13}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Diagramas Escala 1:200}{13}{subsubsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.2}Presion de Poros}{13}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Distribucion Presiones}{13}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Presiones Totales}{14}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Presiones Efectivas}{14}{subsubsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}Estabilidad}{14}{subsubsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.3}Resultados usando Diferencias Finitas}{15}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Caso 1}{15}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Caso 2}{15}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Caso 3}{16}{subsubsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.4}Resultados Escalamiento}{16}{subsection.5.4}%
+\contentsline {subsection}{\numberline {3.3}Resultados usando Diferencias Finitas}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Caso 1}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Caso 2}{11}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Caso 3}{11}{subsubsection.3.3.3}%
+\contentsline {part}{III\hspace {1em}Modelo Escala}{13}{part.3}%
+\contentsline {section}{\numberline {4}Resultados}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Calculo Permeabilidad Muestra}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Licuefaccion}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Aplicacion Diferencias Finitas}{14}{subsection.4.3}%

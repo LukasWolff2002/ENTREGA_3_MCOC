@@ -5,13 +5,13 @@
 - [ ] Parte 1
     - [ ] Pequeña introduccion
     - [x] Teoria 
-    - [ ] Resultados (Falta agregar texto que de continuidad)
+    - [x] Resultados (Falta agregar texto que de continuidad)
     - [ ] Analisis de Resultgados
     - [ ] Fuentes de error
 - [ ] Parte 2
     - [ ] Pequeña introduccion
     - [ ] Teoria (Falta citar)
-    - [ ] Resultados (Falta agregar texto que de continuidad)
+    - [x] Resultados (Falta agregar texto que de continuidad)
     - [ ] Analisis de Resultgados
     - [ ] Fuentes de error
 - [ ] Parte 3

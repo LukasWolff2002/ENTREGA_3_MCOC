@@ -316,9 +316,6 @@ INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
-INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
-INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
-INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux
@@ -412,10 +409,6 @@ INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
 INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
 OUTPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\informe.toc
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\informe.lof
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\informe.lof
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\informe.lof
@@ -579,6 +572,17 @@ INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\felip\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT .\parte_2.tex
 INPUT .\parte_2.tex
 OUTPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_2.aux
@@ -618,21 +622,39 @@ INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT .\GRAFICOS\laplace_caso_1.jpg
+INPUT .\GRAFICOS\laplace_caso_1.jpg
+INPUT .\GRAFICOS\laplace_caso_1.jpg
+INPUT .\GRAFICOS\laplace_caso_1.jpg
+INPUT .\GRAFICOS\laplace_caso_1.jpg
+INPUT .\GRAFICOS\laplace_caso_1.jpg
+INPUT .\GRAFICOS\laplace_caso_1.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
-INPUT C:\Users\felip\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\felip\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_2.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\GRAFICOS\laplace_caso_3.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
+INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\parte_3.tex
 INPUT .\parte_3.tex
 OUTPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
@@ -678,109 +700,6 @@ INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\analisis_resultados.tex
-INPUT .\analisis_resultados.tex
-OUTPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
-INPUT .\analisis_resultados.tex
-INPUT .\analisis_resultados.tex
-INPUT analisis_resultados.tex
-INPUT .\GRAFICOS\caso_1.jpg
-INPUT .\GRAFICOS\caso_1.jpg
-INPUT .\GRAFICOS\caso_1.jpg
-INPUT .\GRAFICOS\caso_1.jpg
-INPUT .\GRAFICOS\caso_2.jpg
-INPUT .\GRAFICOS\caso_2.jpg
-INPUT .\GRAFICOS\caso_2.jpg
-INPUT .\GRAFICOS\caso_2.jpg
-INPUT .\GRAFICOS\caso_3.jpg
-INPUT .\GRAFICOS\caso_3.jpg
-INPUT .\GRAFICOS\caso_3.jpg
-INPUT .\GRAFICOS\caso_3.jpg
-INPUT .\GRAFICOS\caso_1_presion_poros.jpg
-INPUT .\GRAFICOS\caso_1_presion_poros.jpg
-INPUT .\GRAFICOS\caso_1_presion_poros.jpg
-INPUT .\GRAFICOS\caso_1_presion_poros.jpg
-INPUT .\GRAFICOS\caso_2_presion_poros.jpg
-INPUT .\GRAFICOS\caso_2_presion_poros.jpg
-INPUT .\GRAFICOS\caso_2_presion_poros.jpg
-INPUT .\GRAFICOS\caso_2_presion_poros.jpg
-INPUT .\GRAFICOS\caso_3_presion_poros.jpg
-INPUT .\GRAFICOS\caso_3_presion_poros.jpg
-INPUT .\GRAFICOS\caso_3_presion_poros.jpg
-INPUT .\GRAFICOS\caso_3_presion_poros.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_total.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_total.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_1_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_2_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_3_presion_ataguia_neta.jpg
-INPUT .\GRAFICOS\caso_1_centroide_y.jpg
-INPUT .\GRAFICOS\caso_1_centroide_y.jpg
-INPUT .\GRAFICOS\caso_1_centroide_y.jpg
-INPUT .\GRAFICOS\caso_1_centroide_y.jpg
-INPUT .\GRAFICOS\caso_2_centroide_y.jpg
-INPUT .\GRAFICOS\caso_2_centroide_y.jpg
-INPUT .\GRAFICOS\caso_2_centroide_y.jpg
-INPUT .\GRAFICOS\caso_2_centroide_y.jpg
-INPUT .\GRAFICOS\caso_3_centroide_y.jpg
-INPUT .\GRAFICOS\caso_3_centroide_y.jpg
-INPUT .\GRAFICOS\caso_3_centroide_y.jpg
-INPUT .\GRAFICOS\caso_3_centroide_y.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_1.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_2.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\GRAFICOS\laplace_caso_3.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
-INPUT .\LOGO_UNIVERSIDAD.jpg
 INPUT .\anexos.tex
 INPUT .\anexos.tex
 OUTPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux
@@ -820,9 +739,6 @@ INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\parte_3.aux
-INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
-INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
-INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\analisis_resultados.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux
 INPUT c:\Users\felip\OneDrive\Escritorio\202420\MCOC\Parte 2\P1E1\ENTREGA_3_MCOC\INFORMEbuild\anexos.aux

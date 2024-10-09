@@ -172,3 +172,46 @@ Donde se busca:
 
 De esta forma, es posible obtener las diferentes variaciones en el potencial, a partir de los datos conocidos en la grilla (condiciones de borde).
 
+\subsection{Resultados usando Diferencias Finitas}
+
+\subsubsection{Caso 1}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_1.jpg}
+    \caption{Caso 1 Laplace}
+\end{figure}
+
+\subsubsection{Caso 2}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_2.jpg}
+    \caption{Caso 2 Laplace}
+\end{figure}
+
+\subsubsection{Caso 3}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_3.jpg}
+    \caption{Caso 3 Laplace}
+\end{figure}
+
+\begin{table}[H]
+    \begin{center}
+        \caption{Gradientes hidraulicos y caudales obtenidos mediante diferencias finitas.}
+        \begin{tabularx}{0.75\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X }\\
+        \hline
+        \boldmath{Propiedades} & \boldmath{Caso 1} & \boldmath{Caso 2} & \boldmath{Caso 3} & \boldmath{Unidades} \\
+        \hline
+        $i_{max}$ & $1.095$ & $0.629$ & $0.380$ & $-$ \\
+        $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
+        $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
+        $Q_{inf}$ & $25.410$ & $20.790$ & $13.860$ & $[\frac{m^3}{dia}]$\\
+        $k$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $[\frac{m}{s}]$\\
+        \hline
+        \end{tabularx}
+        \label{tab:Diferencias}
+    \end{center}
+\end{table}
