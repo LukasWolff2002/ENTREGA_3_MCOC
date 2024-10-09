@@ -62,8 +62,141 @@ La licuefacción se genera cuando se excede el gradiente hidráulico crítico (\
 \end{equation}
 
 \subsection{Presión en una Ataguía}
-La presión dentro y alrededor de una ataguía es resultado tanto del nivel de agua como de las condiciones del suelo. El diseño de una ataguía implica calcular la caída de carga potencial, la presión de poros y el gradiente hidráulico, lo que permite predecir si la estructura soportará las presiones del agua y del suelo que actúan sobre ella. Las redes de flujo se utilizan para evaluar estas presiones y estimar la infiltración de agua a través de la cimentación. \textbf{\cite{sivakugan2005}}
+La presión dentro y alrededor de una ataguía es resultado tanto del nivel de agua como de las condiciones del suelo. El diseño de una ataguía implica calcular la caída de carga potencial, la presión de poros y el gradiente hidráulico, lo que permite predecir si la estructura soportará las presiones del agua y del suelo que actúan sobre ella. Las redes de flujo se utilizan para evaluar estas presiones y estimar la infiltración de agua a través de la cimentación. \cite{sivakugan2005}
 
+\section{Resultados}
 
+\subsection{Diagramas Escala 1:200}
 
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_1.jpg}
+        \caption{Caso 1}
+        \label{fig:caso_1}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_2.jpg}
+        \caption{Caso 2}
+        \label{fig:caso_2}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_3.jpg}
+        \caption{Caso 3}
+        \label{fig:caso_3}
+    \end{minipage}
+  \end{figure}
+
+Para poder visualizar los 3 casos de ataguías, se graficaron los diagramas a escala 1:200. En estos se pueden observar las líneas de flujo (azules) y equipotenciales (verdes), las cuales permiten visualizar el comportamiento del agua alrededor de la ataguía. Es importante señalar, que para el caso 1 el agua tiene que recorrer una menor distancia para llegar al otro lado de la ataguía, lo que se traduce en una mayor cantidad de agua infiltrada. Por otro lado, el caso 3 es el que presenta una mayor longitud de linea de flujo, lo que se traduce en una menor cantidad de agua infiltrada.
+
+\subsection{Presion de Poros}
+Para poder calcular la presión de poros para cada caso se utilizó la formula (\ref{eq:presion_poros}). 
+\subsubsection{Distribucion Presiones}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_poros.jpg}
+        \caption{Caso 1 Presion Poros}
+        \label{fig:caso_1_presion_poros}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_poros.jpg}
+        \caption{Caso 2 Presion Poros}
+        \label{fig:caso_2_presion_poros}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_poros.jpg}
+        \caption{Caso 3 Presion Poros}
+        \label{fig:caso_3_presion_poros}
+    \end{minipage}
+\end{figure}
+
+Como se puede observar, para el caso \ref{fig:caso_1_presion_poros} en la parte inferior de la ataguía se presenta una mayor presión de poros que en los otros dos casos, lo que se traduce en una mayor cantidad de agua infiltrada y un mayor rieso de licuefacción. Por otro lado, en los casos \ref{fig:caso_2_presion_poros} y \ref{fig:caso_3_presion_poros} se observa que la presión de poros es menor en la parte inferior de la ataguía, lo que se traduce en una menor cantidad de agua infiltrada haciendo más estable y segura la estructura.
+
+\subsubsection{Presiones Totales}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_ataguia_total.jpg}
+        \caption{Caso 1 Presion Ataguia Total}
+        \label{fig:caso_1_presion_ataguia_total}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_ataguia_total.jpg}
+        \caption{Caso 2 Presion Ataguia Total}
+        \label{fig:caso_2_presion_ataguia_total}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_ataguia_total.jpg}
+        \caption{Caso 3 Presion Ataguia Total}
+        \label{fig:caso_3_presion_ataguia_total}
+    \end{minipage}
+\end{figure}
+
+En los diagramas de presión total, se puede observar que para todos los casos la presión en la parte derecha de la ataguía es igual, sin embargo, en la parte derecha a medida que el nivel del suelo aumenta, esta también aumenta. Esto se puede ver en el caso \ref{fig:caso_1_presion_ataguia_total} que la presión en el lado derecho es bajo, mientras que en el caso \ref{fig:caso_3_presion_ataguia_total} la presión es mayor. Los efectos de esto se pueden observar en las presiones efectivas.
+
+\subsubsection{Presiones Efectivas}
+
+Para poder apreciar de mejor manera el efecto de las presiones en la ataguía se diagramaron las presiones efectivas, esto se calcula restando la presión del lado derecho con la presión del lado izquierdo. 
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_ataguia_neta.jpg}
+        \caption{Caso 1 Presion Ataguia Neta}
+        \label{fig:caso_1_presion_ataguia_neta}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_ataguia_neta.jpg}
+        \caption{Caso 2 Presion Ataguia Neta}
+        \label{fig:caso_2_presion_ataguia_neta}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_ataguia_neta.jpg}
+        \caption{Caso 3 Presion Ataguia Neta}
+        \label{fig:caso_3_presion_ataguia_neta}
+    \end{minipage}
+\end{figure}
+
+Como se puede observar, a medida que el nivel del suelo va subiendo, la presión en el fondo de la ataguía va disminuyendo, lo que se traduce en una menor presión efectiva. Esto se puede observar en el caso \ref{fig:caso_1_presion_ataguia_neta} donde la presión efectiva es mayor en la parte inferior de la ataguía, mientras que en el caso \ref{fig:caso_3_presion_ataguia_neta} la presión efectiva es menor.
+
+\subsubsection{Estabilidad}
+Finalmente, para poder determinar la estabilidad de la ataguía se calculó el centroide de la ataguía en cada caso. Esto se hizo en base a las presiones efectivas calculadas anteriormente.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_1_centroide_y.jpg}
+        \caption{Caso 1 Centroide}
+        \label{fig:caso_1_centroide_y}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_2_centroide_y.jpg}
+        \caption{Caso 2 Centroide}
+        \label{fig:caso_2_centroide_y}
+    \end{minipage}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{GRAFICOS/caso_3_centroide_y.jpg}
+        \caption{Caso 3 Centroide}
+        \label{fig:caso_3_centroide_y}
+    \end{minipage}
+\end{figure}
+
+Como se puede observar, en el caso \ref{fig:caso_1_centroide_y} el centroide se encuentra en una parte elevada de la ataguía. Esto genera un momento que tiende a voltear la ataguía, lo que conlleva a una menor estabilidad. Luego, a medida que el nivel de agua y suelo van aumentando el centroide se va desplazando hacia abajo, lo que lleva a una mayor estabilidad y seguridad. 
 
