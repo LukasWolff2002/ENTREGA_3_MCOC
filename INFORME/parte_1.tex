@@ -118,7 +118,7 @@ Para poder calcular la presión de poros para cada caso se utilizó la formula (
     \end{minipage}
 \end{figure}
 
-Como se puede observar, para el caso \ref{fig:caso_1_presion_poros} en la parte inferior de la ataguía se presenta una mayor presión de poros que en los otros dos casos, lo que se traduce en una mayor cantidad de agua infiltrada y un mayor rieso de licuefacción. Por otro lado, en los casos \ref{fig:caso_2_presion_poros} y \ref{fig:caso_3_presion_poros} se observa que la presión de poros es menor en la parte inferior de la ataguía, lo que se traduce en una menor cantidad de agua infiltrada haciendo más estable y segura la estructura.
+Como se puede observar, para el caso \ref{fig:caso_1_presion_poros} en la parte inferior de la ataguía se presenta una mayor presión de poros que en los otros dos casos, lo que se genera un mayor gradiente hidráulico, que podría producir licuefacción. Por otro lado, en los casos \ref{fig:caso_2_presion_poros} y \ref{fig:caso_3_presion_poros} se observa que la presión de poros es menor en la parte inferior de la ataguía, lo que se traduce en una menor presión hidráulica y mayor estabilidad.
 
 \subsubsection{Presiones Totales}
 
@@ -199,3 +199,32 @@ Finalmente, para poder determinar la estabilidad de la ataguía se calculó el c
 \end{figure}
 
 Como se puede observar, en el caso \ref{fig:caso_1_centroide_y} el centroide se encuentra en una parte elevada de la ataguía. Esto genera un momento que tiende a voltear la ataguía, lo que conlleva a una menor estabilidad. Luego, a medida que el nivel de agua y suelo van aumentando el centroide se va desplazando hacia abajo, lo que lleva a una mayor estabilidad y seguridad. 
+
+\section{Análisis de Resultados}
+
+Luego de aplicar los cálculos expresaos en la sección de teoría, se obtuvieron los siguientes resultados para cada caso:
+
+\begin{table}[H]
+    \begin{center}
+        \caption{Gradientes hidraulicos y caudales obtenidos manualmente.}
+        \begin{tabularx}{0.75\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+        \hline
+        \textbf{Propiedades} & \textbf{Caso 1} & \textbf{Caso 2} & \textbf{Caso 3} & \textbf{Unidades} \\
+        \hline
+        $i_{max}$ & $1.095$ & $0.629$ & $0.380$ & $-$ \\
+        $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
+        $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
+        $Q_{inf}$ & $43.877$ & $32.431$ & $25.754$ & $[\frac{m^3}{\text{dia}}]$\\
+        $k$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $[\frac{m}{s}]$\\
+        \hline
+        \end{tabularx}
+        \label{tab:Manuales1}
+    \end{center}
+\end{table}
+
+Los resultados obtenidos muestran que el gradiente hidráulico máximo ($i_{max}$) disminuye en cada caso, lo que sugiere una reducción en el flujo de agua alrededor de la ataguía, mientras que el gradiente crítico ($i_{crit}$) permanece constante en $1.141$, indicando que las propiedades del suelo no cambian. El factor de seguridad (FS) mejora notablemente en los casos 2 y 3, pasando de $1.041$ en el primer caso a $2.999$ en el tercer caso, lo que sugiere una mayor estabilidad a medida que se reducen los gradientes. El caudal de infiltración ($Q_{inf}$) también disminuye de $43.877 \ \frac{m^3}{\text{día}}$ en el primer caso a $25.754 \ \frac{m^3}{\text{día}}$ en el tercer caso, lo que indica un mejor control del flujo de agua. Finalmente, el coeficiente de permeabilidad ($k$) se mantiene constante en $6.9 \times 10^{-5} \ \frac{m}{s}$, debido a que las propiedades del suelo no varían entre los casos.
+
+\section{Fuentes de error}
+
+Al realizar los cálculos manualmente, se pueden presentar errores humanos al realizar las operaciones matemáticas, lo que podría afectar la precisión de los resultados. Además, la interpretación de los diagramas de flujo y equipotenciales puede ser subjetiva, lo que podría llevar a errores en la estimación de las propiedades del suelo. Por otro lado, al trabajar con un número reducido de líneas equipotenciales y de flujo, se pueden perder detalles importantes del flujo de agua alrededor de la ataguía, lo que podría afectar la precisión de los cálculos. 
+
