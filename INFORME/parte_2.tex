@@ -1,13 +1,12 @@
 \part{Diferencias Finitas}
 
-Para poder mejorar la precicion de los resultados, se implemento un modelo de diferencias finitas implementado en la matriz de potencial hidraulico, de esta manera, se puede calcular las lineas de flujo, obteniendo asi el caudal de infiltracion.
-El objetivo principal es poder determinar la efectividad de este metodo frente a un proceso mas simple como el calculo manual expuesto en la seccion anterior.
+Para mejorar la precisión de los resultados, se implementó un modelo de diferencias finitas aplicado a la matriz de potencial hidráulico. De esta manera, se pueden calcular las líneas de flujo, obteniendo así el caudal de infiltración. El objetivo principal es determinar la efectividad de este método frente a un proceso más simple, como el cálculo manual expuesto en la sección anterior.
 
-\section{Teoria}
+\section{Teoría}
 
 \subsection{Ley de Darcy}
 
-La ley de Darcy expone lo siguiente:
+La ley de Darcy se expresa como:
 
 \begin{equation}
     q = k \cdot i \cdot A
@@ -19,7 +18,7 @@ Lo cual es análogo a:
     v = k \cdot i
 \end{equation}
 
-Donde \(i\) es el gradiente hidráulico. Discretizándolo en el espacio, se obtiene lo siguiente:
+Donde \(i\) es el gradiente hidráulico. Discretizando en el espacio, se obtiene lo siguiente:
 
 \begin{equation}
     i = \frac{dh}{dl} = \frac{dh}{dx}; \frac{dh}{dy}; \frac{dh}{dz}
@@ -67,19 +66,19 @@ Simplificando:
     \Delta_x \Delta_y \Delta_z = Volumen
 \end{equation}
 
-Pero el fluido, al ser agua, es incompresible, por lo tanto:
+Dado que el fluido es agua, que es incompresible, se tiene:
 
 \begin{equation}
    -\rho(\frac{du}{dx}+ \frac{dv}{dy}+ \frac{dw}{dz}) = 0
 \end{equation}
 
-Lo que es análogo a decir:
+Lo cual es análogo a:
 
 \begin{equation}
     -\rho \nabla \cdot \vec{v} = 0 = \nabla \cdot \vec{v}
 \end{equation}
 
-Por lo tanto, si reemplazamos en la ley de Darcy, obtenemos:
+Por lo tanto, al reemplazar en la ley de Darcy, se obtiene:
 
 \begin{equation}
     V_x = k_x\cdot \frac{dh}{dx}; V_y = k_y\cdot \frac{dh}{dy}; V_z = k_z\cdot \frac{dh}{dz}
@@ -91,25 +90,25 @@ Incorporando la ecuación de continuidad, se obtiene:
     \nabla \cdot \vec{V} = \nabla \cdot (k \cdot \vec{i}) = 0
 \end{equation}
 
-Asumiendo un análisis en 2D, se obtiene:
+Asumiendo un análisis en 2D, se tiene:
 
 \begin{equation}
     \frac{d}{dx}(k_x \cdot \frac{dh}{dx}) + \frac{d}{dy}(k_y \cdot \frac{dh}{dy}) = 0
 \end{equation}
 
-Pero sabemos, o mejor dicho, suponemos que:
+Suponiendo que:
 
 \begin{equation}
     k_x = k_y = k
 \end{equation}
 
-Por lo tanto:
+Se obtiene:
 
 \begin{equation}
     k \nabla^2 h = 0
 \end{equation}
 
-De esta forma, podemos representar el laplaciano con diferencias finitas.
+De esta forma, podemos representar el laplaciano mediante diferencias finitas.
 
 \subsection{Diferencias Finitas}
 
@@ -122,18 +121,18 @@ De esta forma, podemos representar el laplaciano con diferencias finitas.
 \subsubsection{Diferencias Hacia Atrás}
 
 \begin{equation}
-    h(x - \Delta x) = h(x) - \frac{dh}{dx} \Delta x + ...-...+
+    h(x - \Delta x) = h(x) - \frac{dh}{dx} \Delta x + ...
 \end{equation}
 
 \subsubsection{Diferencias Centrales}
 
-Se representa como la suma de una diferencia hacia adelante y hacia atrás, obteniendo:
+La suma de las diferencias hacia adelante y hacia atrás es:
 
 \begin{equation}
     h(x + \Delta x) + h(x - \Delta x) = h(x) + \frac{d^2h}{dx^2}\frac{\Delta x}{2!} + ...(los pares)
 \end{equation}
 
-Donde la incógnita que se busca es $\frac{d^2h}{dx^2}$, por lo tanto, despejando, se obtiene:
+Donde la incógnita es $\frac{d^2h}{dx^2}$. Despejando, obtenemos:
 
 \begin{equation}
     \frac{d^2h}{dx^2} = \frac{h(x + \Delta x) - 2h(x) + h(x - \Delta x)}{\Delta x^2}
@@ -143,7 +142,7 @@ Donde la incógnita que se busca es $\frac{d^2h}{dx^2}$, por lo tanto, despejand
     \frac{dh}{dx} = \frac{h(x + \Delta x) - h(x)}{\Delta x}
 \end{equation}
 
-Lo cual se puede llevar a una grilla:
+Esto se puede llevar a una grilla:
 
 \begin{figure}[H]
     \centering
@@ -173,7 +172,7 @@ Donde se busca:
     h_{i,j} = \frac{1}{4}(h_{i+1,j} + h_{i-1,j} + h_{i,j+1} + h_{i,j-1})
 \end{equation}
 
-De esta forma, es posible obtener las diferentes variaciones en el potencial, a partir de los datos conocidos en la grilla (condiciones de borde).
+De esta forma, es posible obtener las variaciones en el potencial a partir de los datos conocidos en la grilla (condiciones de borde).
 
 \subsection{Resultados usando Diferencias Finitas}
 
@@ -203,7 +202,7 @@ De esta forma, es posible obtener las diferentes variaciones en el potencial, a 
 
 \begin{table}[H]
     \begin{center}
-        \caption{Gradientes hidraulicos y caudales obtenidos mediante diferencias finitas.}
+        \caption{Gradientes hidráulicos y caudales obtenidos mediante diferencias finitas.}
         \begin{tabularx}{0.75\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X }\\
         \hline
         \boldmath{Propiedades} & \boldmath{Caso 1} & \boldmath{Caso 2} & \boldmath{Caso 3} & \boldmath{Unidades} \\
@@ -211,7 +210,7 @@ De esta forma, es posible obtener las diferentes variaciones en el potencial, a 
         $i_{max}$ & $1.095$ & $0.629$ & $0.380$ & $-$ \\
         $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
         $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
-        $Q_{inf}$ & $25.410$ & $20.790$ & $13.860$ & $[\frac{m^3}{dia}]$\\
+        $Q_{inf}$ & $25.410$ & $20.790$ & $13.860$ & $[\frac{m^3}{día}]$\\
         $k$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $[\frac{m}{s}]$\\
         \hline
         \end{tabularx}
@@ -219,4 +218,4 @@ De esta forma, es posible obtener las diferentes variaciones en el potencial, a 
     \end{center}
 \end{table}
 
-El método de diferencias finitas es una opción de cálculo más precisa que el modo manual, ya que incorpora cada parte de la ataguía infenitesimalmente, calculando las presiones de manera más homogenea. Como resultado, se obtuvieron caudales menores y mas representativos para cada caso, siendo el caso 1 y 2 caudales relativamente cercanos debido a que la altura de agua en ambos lados de la ataguía es la misma.
+El método de diferencias finitas es una opción de cálculo más precisa que el método manual, ya que incorpora cada parte de la ataguía infinitesimalmente, calculando las presiones de manera más homogénea. Como resultado, se obtuvieron caudales menores y más representativos para cada caso, siendo los casos 1 y 2 caudales relativamente cercanos debido a que la altura de agua en ambos lados de la ataguía es la misma.

@@ -1,23 +1,14 @@
-\section*{Introduccion}
+\section*{Introducción}
 
-Una ataguia es una estructura temporal utilizada para drenar zonas cubiertas de agua, de este modo, es posible construir en terrenos
-que de otra forma serian inaccesibles \textbf{\cite{madanayaka2018}}. Hay varios factores importantes a determinar al momento de diseñar
-una ataguia, como por ejemplo el caudal de infiltracion, las presiones de poros, estabilidad de la estructura y por sobre todo la licuefaccion
-y su factor de seguridad (FS). Este ultimo fenomeno ocurre cuando las presiones de poros alcanzan tal punto, que las tensiones internas efectivas
-entre las particulas de suelo pierden efectividad, y en consecuencia, la mescla entre agua y sedimentos actua como un fluido \textbf{\cite{sumer2009}}
+Una ataguía es una estructura temporal utilizada para drenar zonas cubiertas de agua, lo que permite construir en terrenos que, de otra forma, serían inaccesibles \textbf{\cite{madanayaka2018}}. Hay varios factores importantes a considerar al momento de diseñar una ataguía, como el caudal de infiltración, las presiones de poros, la estabilidad de la estructura y, sobre todo, la licuefacción y su factor de seguridad (FS). Este último fenómeno ocurre cuando las presiones de poros alcanzan tal punto que las tensiones internas efectivas entre las partículas del suelo pierden efectividad, y, en consecuencia, la mezcla entre agua y sedimentos actúa como un fluido \textbf{\cite{sumer2009}}.
 \\ \\
-El presente proyecto tiene como objetivo el estido y analisis de 3 ataguias distintas, donde se buscara evaluar sus distintas caracteristicas utilizando 
-calculos manuales a travez de python, un solver mediante diferencias finitas y una maqueta a escala. De esta forma, se buscara analizar la efectividad
-de cada metodo de analisis, ademas, de una comparacion directa entre los resultados obtenidos.
+El presente proyecto tiene como objetivo el estudio y análisis de tres ataguías distintas, donde se busca evaluar sus características mediante cálculos manuales a través de Python, un solver mediante diferencias finitas y un modelo a escala. De esta manera, se busca analizar la efectividad de cada método de análisis, además de hacer una comparación directa entre los resultados obtenidos.
 \\ \\
-En los calculos manuales, se utilizo la Ley de Darcy, ademas de las diferentes ecuaciones nesesarias para determinar una red de flujo teoricamente. De esta forma, 
-se calculo parametros como el caudal de infiltracion o la prescion de poros a lo largo de toda la estructura.
+En los cálculos manuales, se utilizó la Ley de Darcy, además de las diferentes ecuaciones necesarias para determinar una red de flujo teórica. De esta forma, se calcularon parámetros como el caudal de infiltración y la presión de poros a lo largo de toda la estructura.
 \\ \\
-Posterirmente, se desarrollo un solver mediante diferencias finitas, el cual es un metodo numerico utilizado para calcular diferencias de potenciales en grillas 2D o 3D \textbf{\cite{zhang2005}}.
-De esta menera, y determinando que el fluoj va de un potencial mayor a uno menor, se pueden obtener las redes de flujos y asi los distintos parametros nesesarios.
+Posteriormente, se desarrolló un solver mediante diferencias finitas, el cual es un método numérico utilizado para calcular diferencias de potenciales en grillas 2D o 3D \textbf{\cite{zhang2005}}. De este modo, al determinar que el flujo va de un potencial mayor a uno menor, se pueden obtener las redes de flujo y, con ello, los distintos parámetros necesarios.
 \\ \\
-Finalmente se realizo un modelo a escala, donde se simulo la ataguia ademas de una falla por licuefaccion. Ademas, se busco calibrar el modelo computacional en base a los datos obtenidos del modelo real, 
-determinando asi, que tan efectivo es el calculo numerico, en comparacion con la realidad.
+Finalmente, se realizó un modelo a escala, en el que se simuló la ataguía y una falla por licuefacción. Además, se buscó calibrar el modelo computacional en base a los datos obtenidos del modelo real, determinando así cuán efectivo es el cálculo numérico en comparación con la realidad.
 \\ \\
 El modelo base utilizado a lo largo del informe es el siguiente:
 
@@ -25,9 +16,8 @@ El modelo base utilizado a lo largo del informe es el siguiente:
     \centering
     \includegraphics[width=0.45\textwidth]{FOTOS/modelo_base.png}
     \caption{Modelo Base}
-    Fuente: Guia de Proyecto
+    Fuente: Guía de Proyecto
     \label{fig:modelo_base}
 \end{figure}
 
 Las medidas para los distintos casos se encuentran en la tabla \textbf{\ref{tab:medidas}}.
-
