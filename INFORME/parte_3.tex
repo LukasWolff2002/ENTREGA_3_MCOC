@@ -7,23 +7,6 @@ Finalmente, se implementó un modelo a escala en el que se buscó alcanzar la fa
 \subsection{Escalamiento}
 El análisis dimensional se utiliza para estudiar cómo cambian las fuerzas y el flujo al escalar un sistema como una ataguía. Se utilizan grupos adimensionales como el número de Reynolds, Froude y Euler.
 
-\subsubsection{Número de Reynolds}
-El número de Reynolds nos indica si el flujo es laminar o turbulento. Se calcula como:
-
-\begin{equation}
-Re = \frac{\rho V L}{\mu}
-\end{equation}
-
-Donde:
-\begin{itemize}
-    \item $\rho$ es la densidad del fluido,
-    \item $V$ es la velocidad del agua,
-    \item $L$ es la altura de la ataguía,
-    \item $\mu$ es la viscosidad del agua.
-\end{itemize}
-
-Un $Re$ alto indica flujo turbulento y uno bajo flujo laminar.
-
 \subsubsection{Número de Froude}
 El número de Froude es importante cuando hay una superficie libre en el agua. Se calcula como:
 
@@ -40,34 +23,6 @@ Donde:
 
 Mantener el número de Froude constante ayuda a asegurar que el flujo tenga un comportamiento similar en un modelo a escala.
 
-\subsubsection{Número de Euler}
-El número de Euler describe la relación entre la presión y las fuerzas inerciales:
-
-\begin{equation}
-Eu = \frac{P}{\rho V^2}
-\end{equation}
-
-Donde:
-\begin{itemize}
-    \item $P$ es la presión ejercida por el agua,
-    \item $\rho$ es la densidad del agua,
-    \item $V$ es la velocidad del agua.
-\end{itemize}
-
-\subsection{Fuerza Hidrostática}
-La fuerza que ejerce el agua sobre la ataguía depende de la altura del agua. La fuerza hidrostática se calcula como:
-
-\begin{equation}
-F_h = \frac{1}{2} \rho g h^2 L
-\end{equation}
-
-Donde:
-\begin{itemize}
-    \item $h$ es la altura del agua contra la ataguía,
-    \item $L$ es la longitud de la ataguía.
-\end{itemize}
-
-Esta fuerza aumenta con el cuadrado de la altura del agua.
 
 \subsection{Similitud en el Escalamiento}
 Para que un modelo a escala sea válido, se deben cumplir tres tipos de similitud:
@@ -209,6 +164,5 @@ Se determina un caudal de 0.008972885614821659 cm/s
 Mediante la confirmacion del teorema de Buckingham $\pi$ se obtiene que el caudal del modelo es:
 
 \begin{equation}
-    Q_{modelo} = Q_{prototopo} \cdot 1.5012 \cdot 10^{-5}
+    Q_{modelo} = Q_{prototopo} \cdot 1.1025 \cdot 10^{-4}
 \end{equation}
-
