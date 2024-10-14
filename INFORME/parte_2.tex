@@ -174,31 +174,63 @@ Donde se busca:
 
 De esta forma, es posible obtener las variaciones en el potencial a partir de los datos conocidos en la grilla (condiciones de borde).
 
-\subsection{Resultados usando Diferencias Finitas}
+\newpage
 
-\subsubsection{Caso 1}
+\section{Resultados usando Diferencias Finitas}
+Luego de implementar el método de diferencias finitas, se obtuvieron los siguientes resultados para los casos planteados en la sección anterior.
+\subsection{Caso 1}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_1.jpg}
     \caption{Caso 1 Laplace}
+    \label{fig:laplace_caso_1}
 \end{figure}
 
-\subsubsection{Caso 2}
+Como se puede apreciar en la figura \ref{fig:laplace_caso_1}, tiene el mayor potencial hidráulico abajo de la ataguía, lo cual conlleva a un caudal de infiltración mayor que en los otros casos.
+
+\subsection{Caso 2}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_2.jpg}
     \caption{Caso 2 Laplace}
+    \label{fig:laplace_caso_2}
 \end{figure}
 
-\subsubsection{Caso 3}
+Para el caso 2, se observa que se ocupó el mismo modelo, pero se cambiaron las dimensiones y potenciales hidráulicos. Este cambio, se puede observar en la distribución de la matriz K y en la matriz de potenciales. Además, en este caso el potencial hidráulico abajo de la ataguía es menor.
+
+\subsection{Caso 3}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_3.jpg}
     \caption{Caso 3 Laplace}
+    \label{fig:laplace_caso_3}
 \end{figure}
+
+Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del problema, distribución de la matriz k y los potenciales hidráulicos. En este caso, el potencial hidráulico abajo de la ataguía es el menor de los tres casos, lo cual conlleva a un caudal de infiltración menor.
+
+\section{Análisis de Resultados}
+
+\begin{table}[H]
+    \centering
+    \caption{Caudales obtenidos mediante análisis analítico y diferencias finitas.}
+    \vspace{0.5cm}
+    \begin{tabular}{cccc}
+        \hline
+        \textbf{Caso} & \textbf{Caudal de Infiltración [$m/dia$]} & \textbf{Caudal según Laplace [$m/dia$]} & \textbf{Error [\%]} \\
+        \hline
+        1 & $0.97$ & $1.21$ & $24.7$ \\
+        2 & $0.72$ & $0.99$ & $36.0$ \\
+        3 & $0.57$ & $0.66$ & $15.8$ \\
+        \hline
+    \end{tabular}
+    \label{tab:Diferencias1}
+\end{table}
+
+
+
 
 \begin{table}[H]
     \begin{center}
