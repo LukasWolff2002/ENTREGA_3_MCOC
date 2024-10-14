@@ -229,25 +229,7 @@ Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del
     \label{tab:Diferencias1}
 \end{table}
 
+Los resultados comparan el caudal de infiltración obtenido de manera analítica con el caudal calculado por el método de diferencias finitas. En el Caso 1, el error es del 24.7\%, en el Caso 2 es mayor, con un 36.0\%, y en el Caso 3 es menor, con un 15.8\%. A pesar de los errores, ambos métodos coinciden en que el Caso 1 presenta el mayor caudal de infiltración y el Caso 3 con el menor caudal de infiltración. Esto sugiere que, aunque ambos métodos son similares, el método de diferencias finitas puede tener desviaciones dependiendo de la cantidad de nodos, mientras que la manera analítica depende de la cantidad de equipotenciales y líneas de flujo. Estas condiciones del sistema afectan los cálculos, que se pueden ver en el margen de error.
 
-
-
-\begin{table}[H]
-    \begin{center}
-        \caption{Gradientes hidráulicos y caudales obtenidos mediante diferencias finitas.}
-        \begin{tabularx}{0.75\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X }\\
-        \hline
-        \boldmath{Propiedades} & \boldmath{Caso 1} & \boldmath{Caso 2} & \boldmath{Caso 3} & \boldmath{Unidades} \\
-        \hline
-        $i_{max}$ & $1.095$ & $0.629$ & $0.380$ & $-$ \\
-        $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
-        $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
-        $Q_{inf}$ & $25.410$ & $20.790$ & $13.860$ & $[\frac{m^3}{día}]$\\
-        $k$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $[\frac{m}{s}]$\\
-        \hline
-        \end{tabularx}
-        \label{tab:Diferencias}
-    \end{center}
-\end{table}
 
 El método de diferencias finitas es una opción de cálculo más precisa que el método manual, ya que incorpora cada parte de la ataguía infinitesimalmente, calculando las presiones de manera más homogénea. Como resultado, se obtuvieron caudales menores y más representativos para cada caso, siendo los casos 1 y 2 caudales relativamente cercanos debido a que la altura de agua en ambos lados de la ataguía es la misma.
