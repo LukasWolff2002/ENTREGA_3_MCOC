@@ -151,6 +151,8 @@ def laplace (caso, nombre, grilla):
 
     if nombre != 'caso_ejemplo':
         q = ((np.sum(salida_velocity_y)*espaciado*-1)/(C1*200/2))*24*3600
+
+    
     else:
         q = ((np.sum(salida_velocity_y)*espaciado*-1)/(C1*10/2))*24*3600
     print(f'El flujo de salida es {q = } m/s')
