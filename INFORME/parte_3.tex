@@ -67,6 +67,7 @@ Se define como permeabilidad aquella caracteristica del suelo que permite el pas
 
 Donde L corresponde a la altura de suelo, A el area transversal de suelo, $\Delta t$ el tiempo transcurrido, h1 y h2 las alturas de agua en el recipiente y a el ancho de la columna de agua.
 
+\newpage
 \section{Resultados}
 
 \subsection{Cálculo de Permeabilidad de la Muestra}
@@ -101,11 +102,63 @@ La toma de datos se realizo de la siguiente manera (ver en Adobe Acrobat):
     ]{\includegraphics[width=\textwidth]{VIDEOS/miniatura_permeabilidad.jpg}}{VPlayer.swf}
 \end{center}
 
-
-
+\newpage
 Los datos obtenidos son los siguientes:
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    r1 & r2 & h & $\Delta h$ \\ \hline
+    4 & 9.2 & 7.7 & 4.8 \\ \hline
+    \end{tabular}
+    \caption{Medidas Cono [cm]}
+    \label{tab:permeabilidad}
+\end{table}
 
+Donde los tiempos registrados fueron:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $\Delta t_1$ & $\Delta t_2$ & $\Delta t_3$ & $\Delta t_4$ & $\Delta t_5$ \\ \hline
+    12.6 & 12.03 & 12.34 & 13.05 & 13.0 \\ \hline
+    \end{tabular}
+    \caption{Datos de Tiemp0 [s]}
+    \label{tab:tiempos}
+\end{table}
+
+De esta forma es posible calcular la permeabilidad de la muestra resultando en:
+
+\begin{equation}
+    k = 0.381 \text{cm/s} = 0.00381 \text{m/s}
+\end{equation}
+
+\subsection{Modelo Escalado}
+
+Realizando la simulacion computacional con diferecnias finitas del modelo a escala, se obtiene un caudal de 0.00897 cm/s, considerando que el caudal real del modelo es de 1,144 $cm^3/s$ y su area transversal es de 138 $cm^2$, el caudal puntual
+es de 0.00828 cm/s, de esta forma, el porcentaje de error es de un \textbf{7.36\%}, lo cual es un valor mas que aceptable.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{GRAFICOS/laplace_escala_cm.jpg}
+    \caption{Simulación con Diferencias Finitas del Caso Escala}
+    \label{fig:maqueta_caso_1}
+\end{figure}
+
+\subsubsection{Caudal escalado}
+
+Mediante la confirmacion del teorema de Buckingham $\pi$ se obtiene que el caudal del modelo a escala 1:1 es:
+
+\begin{equation}
+    Q_{modelo} = Q_{prototopo} \cdot 1.1025 \cdot 10^{-4} = 1.144 \cdot 1.1025 \cdot 10^{-4} = 0.00012624 \text{m}^3/\text{s}
+\end{equation}
+
+Realizando una simulacion con las medias escaladas (\ref{tab:medidas_escaladas})
+
+
+\newpage
 \subsection{Licuefaccion}
 
 A continuación, se presenta un video (ver en Adobe Acrobat) de la falla observada por licuefacción en la maqueta a escala.
@@ -155,14 +208,3 @@ Además, se calculó el mismo caso utilizando diferencias finitas:
     \label{fig:maqueta_licuefaccion_diferencias_finitas}
 \end{figure}
 
-\subsection{Aplicación de Diferencias Finitas}
-
-Se determina un caudal de 0.008972885614821659 cm/s
-
-\subsection{Caudal escalado}
-
-Mediante la confirmacion del teorema de Buckingham $\pi$ se obtiene que el caudal del modelo es:
-
-\begin{equation}
-    Q_{modelo} = Q_{prototopo} \cdot 1.1025 \cdot 10^{-4}
-\end{equation}
