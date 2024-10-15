@@ -176,6 +176,11 @@ Donde se busca:
 
 De esta forma, es posible obtener las variaciones en el potencial a partir de los datos conocidos en la grilla (condiciones de borde). \textbf{\cite{budhu_soil_2010}}
 
+\subsection{Implementacion de Diferencias Finitas}
+
+Para implementar este método, es necesario lograr que las paredes y la ataguía actúen como barreras impermeables, de manera que la variación de potencial sea cero en esos lugares. Además, se establecen dos condiciones de borde: el inicio y el fin del flujo hidráulico, donde se especifica el gradiente hidráulico en cada caso. De este modo, el flujo se desplaza desde un gradiente mayor hacia uno menor.
+
+
 \newpage
 
 \section{Resultados usando Diferencias Finitas}
