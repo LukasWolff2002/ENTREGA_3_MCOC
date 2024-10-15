@@ -4,6 +4,8 @@ Para mejorar la precisión de los resultados, se implementó un modelo de difere
 
 \section{Teoría}
 
+A continuación, se presentará la teoría utilizada para el cálculo en esta sección.
+
 \subsection{Ley de Darcy}
 
 La ley de Darcy se expresa como:
@@ -24,7 +26,7 @@ Donde \(i\) es el gradiente hidráulico. Discretizando en el espacio, se obtiene
     i = \frac{dh}{dl} = \frac{dh}{dx}; \frac{dh}{dy}; \frac{dh}{dz}
 \end{equation}
 
-Sea lo siguiente:
+Se define la entrada al sistema como:
 
 \begin{figure}[H]
     \centering
@@ -198,7 +200,7 @@ Como se puede apreciar en la figura \ref{fig:laplace_caso_1}, tiene el mayor pot
     \label{fig:laplace_caso_2}
 \end{figure}
 
-Para el caso 2, se observa que se ocupó el mismo modelo, pero se cambiaron las dimensiones y potenciales hidráulicos. Este cambio, se puede observar en la distribución de la matriz K y en la matriz de potenciales. Además, en este caso el potencial hidráulico abajo de la ataguía es menor.
+Para el caso 2, se observa que se ocupó el mismo modelo, pero se cambiaron las dimensiones y potenciales hidráulicos. Este cambio se puede observar en la distribución de la matriz \(K\) y en la matriz de potenciales. Además, en este caso, el potencial hidráulico abajo de la ataguía es menor.
 
 \subsection{Caso 3}
 
@@ -209,7 +211,7 @@ Para el caso 2, se observa que se ocupó el mismo modelo, pero se cambiaron las 
     \label{fig:laplace_caso_3}
 \end{figure}
 
-Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del problema, distribución de la matriz k y los potenciales hidráulicos. En este caso, el potencial hidráulico abajo de la ataguía es el menor de los tres casos, lo cual conlleva a un caudal de infiltración menor.
+Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del problema, la distribución de la matriz \(k\) y los potenciales hidráulicos. En este caso, el potencial hidráulico abajo de la ataguía es el menor de los tres casos, lo cual conlleva a un caudal de infiltración menor.
 
 \section{Análisis de Resultados}
 
@@ -219,7 +221,7 @@ Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del
     \vspace{0.5cm}
     \begin{tabular}{cccc}
         \hline
-        \textbf{Caso} & \textbf{Caudal de Infiltración [$m/dia$]} & \textbf{Caudal según Laplace [$m/dia$]} & \textbf{Error [\%]} \\
+        \textbf{Caso} & \textbf{Caudal de Infiltración [$m/día$]} & \textbf{Caudal según Laplace [$m/día$]} & \textbf{Error [\%]} \\
         \hline
         1 & $0.97$ & $1.21$ & $24.7$ \\
         2 & $0.72$ & $0.99$ & $36.0$ \\
@@ -229,25 +231,6 @@ Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del
     \label{tab:Diferencias1}
 \end{table}
 
-
-
-
-\begin{table}[H]
-    \begin{center}
-        \caption{Gradientes hidráulicos y caudales obtenidos mediante diferencias finitas.}
-        \begin{tabularx}{0.75\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X }\\
-        \hline
-        \boldmath{Propiedades} & \boldmath{Caso 1} & \boldmath{Caso 2} & \boldmath{Caso 3} & \boldmath{Unidades} \\
-        \hline
-        $i_{max}$ & $1.095$ & $0.629$ & $0.380$ & $-$ \\
-        $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
-        $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
-        $Q_{inf}$ & $25.410$ & $20.790$ & $13.860$ & $[\frac{m^3}{día}]$\\
-        $k$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $[\frac{m}{s}]$\\
-        \hline
-        \end{tabularx}
-        \label{tab:Diferencias}
-    \end{center}
-\end{table}
-
 El método de diferencias finitas es una opción de cálculo más precisa que el método manual, ya que incorpora cada parte de la ataguía infinitesimalmente, calculando las presiones de manera más homogénea. Como resultado, se obtuvieron caudales menores y más representativos para cada caso, siendo los casos 1 y 2 caudales relativamente cercanos debido a que la altura de agua en ambos lados de la ataguía es la misma.
+\\ \\
+\textbf{Nota:} Se ocupa caudal por unidad lineal, ya que de esta manera se puede realizar una comparación mucho más objetiva para todo tipo de ataguía. Para obtener el caudal total, ...

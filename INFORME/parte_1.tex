@@ -1,8 +1,11 @@
 \part{Cálculos Manuales}
 
-Esta sección tiene como objetivo modelar una ataguía utilizando redes de flujo y líneas equipotenciales graficadas "a mano" a través de Python. De esta manera, se buscará calcular factores como el caudal de infiltración, la presión de poros a lo largo de la ataguía, la estabilidad, la falla por licuefacción y el factor de seguridad. Todos estos cálculos fueron realizados con Python, lo que permitió efectuar un análisis más exhaustivo y preciso en los distintos casos.
+Esta sección tiene como objetivo modelar una ataguía utilizando redes de flujo y líneas equipotenciales graficadas "a mano" a través de Python. De esta manera, se busca calcular factores como el caudal de infiltración, la presión de poros a lo largo de la ataguía, la estabilidad, la falla por licuefacción y el factor de seguridad. Todos estos cálculos fueron realizados con Python, lo que permitió efectuar un análisis más exhaustivo y preciso en los distintos casos.
 
 \section{Teoría}
+
+A continuación, se presentará la teoría utilizada para el cálculo en esta sección.
+
 \subsection{Líneas de Flujo}
 Las líneas de flujo representan las trayectorias que siguen las partículas de agua al moverse a través de un medio poroso. En un diagrama de flujo, estas líneas son perpendiculares a las líneas equipotenciales y muestran la dirección del flujo subterráneo o de infiltración. En estructuras como las ataguías, las líneas de flujo se usan para predecir el comportamiento del agua alrededor y debajo de la estructura, ayudando a diseñar sistemas eficaces de control de agua. \textbf{\cite{structville}}
 
@@ -10,7 +13,7 @@ Las líneas de flujo representan las trayectorias que siguen las partículas de 
 Las líneas equipotenciales representan ubicaciones con igual carga hidráulica, lo que significa que no hay diferencia de energía a lo largo de ellas. En problemas de flujo de agua subterránea, como los relacionados con las ataguías, estas líneas ayudan a visualizar la distribución de la energía potencial dentro del agua. Son fundamentales para determinar el caudal de agua y asegurar que esta no desestabilice estructuras como los diques o presas. \textbf{\cite{structville}}
 
 \subsection{Caudal de Infiltración}
-El caudal de infiltración es el flujo de agua que penetra a través del suelo debido a la diferencia de presión entre el nivel de agua dentro y fuera de la ataguía en este caso. La tasa de infiltración está condicionada por la permeabilidad del suelo y la diferencia de carga hidráulica. Para calcular el caudal de infiltración, se utiliza la fórmula (\ref{eq:caudal_infiltracion}). \textbf{\cite{stability_cofferdam_2024}}
+El caudal de infiltración es el flujo de agua que penetra a través del suelo debido a la diferencia de presión entre el nivel de agua dentro y fuera de la ataguía. La tasa de infiltración está condicionada por la permeabilidad del suelo y la diferencia de carga hidráulica. Para calcular el caudal de infiltración, se utiliza la fórmula (\ref{eq:caudal_infiltracion}). \textbf{\cite{stability_cofferdam_2024}}
 
 \begin{equation}
     Q = k \cdot \frac{\Delta H}{N_{f}} \cdot N_{d}
@@ -19,7 +22,7 @@ El caudal de infiltración es el flujo de agua que penetra a través del suelo d
 
 Donde:
 \begin{itemize}
-    \item $Q$ = Caudal de Infiltración
+    \item $Q$ = Caudal de infiltración
     \item $k$ = Coeficiente de permeabilidad
     \item $\Delta H$ = Diferencia de carga hidráulica
     \item $N_{f}$ = Cantidad de canales de flujo
@@ -27,7 +30,7 @@ Donde:
 \end{itemize}
 
 \subsection{Presión de Poros}
-La presión de poros es la fuerza que el agua ejerce dentro de los poros de un material como el suelo o la roca. Juega un papel crucial en la construcción con agua o alto nivel freático, ya que una presión de poros excesiva puede reducir el esfuerzo efectivo en el suelo, lo que podría ocasionar problemas como la licuefacción, donde el suelo pierde firmeza, o la formación de tuberías subterráneas. En las ataguías, la presión de poros es un factor clave, ya que afecta la estabilidad del terreno que rodea la estructura. Para calcular la presión de poros, se utiliza la siguiente fórmula. \textbf{\cite{jeas}}
+La presión de poros es la fuerza que el agua ejerce dentro de los poros de un material, como el suelo o la roca. Juega un papel crucial en la construcción en terrenos con agua o alto nivel freático, ya que una presión de poros excesiva puede reducir el esfuerzo efectivo en el suelo, lo que podría ocasionar problemas como la licuefacción, donde el suelo pierde firmeza, o la formación de tuberías subterráneas. En las ataguías, la presión de poros es un factor clave, ya que afecta la estabilidad del terreno que rodea la estructura. Para calcular la presión de poros, se utiliza la siguiente fórmula. \textbf{\cite{jeas}}
 
 \begin{equation}
     u = \gamma \cdot h
@@ -36,8 +39,8 @@ La presión de poros es la fuerza que el agua ejerce dentro de los poros de un m
 
 Donde:
 \begin{itemize}
-    \item $u$ = Presión de Poros
-    \item $\gamma$ = Peso Específico del Agua
+    \item $u$ = Presión de poros
+    \item $\gamma$ = Peso específico del agua
     \item $h$ = Profundidad del agua
 \end{itemize}
 
@@ -51,7 +54,7 @@ El gradiente hidráulico es el cambio de la carga hidráulica por unidad de dist
 
 Donde:
 \begin{itemize}
-    \item $i$ = Gradiente Hidráulico
+    \item $i$ = Gradiente hidráulico
     \item $\Delta h$ = Cambio de carga hidráulica
     \item $\Delta L$ = Distancia en la dirección del flujo
 \end{itemize}
@@ -91,9 +94,9 @@ La presión dentro y alrededor de una ataguía es resultado tanto del nivel de a
         \caption{Caso 3}
         \label{fig:caso_3}
     \end{minipage}
-  \end{figure}
+\end{figure}
 
-Para visualizar los tres casos de ataguías, se graficaron los diagramas a escala 1:200. En estos, se pueden observar las líneas de flujo (azules) y equipotenciales (verdes), las cuales permiten visualizar el comportamiento del agua alrededor de la ataguía. Es importante señalar que en el caso 1 el agua tiene que recorrer una menor distancia para llegar al otro lado de la ataguía, lo que se traduce en una mayor cantidad de agua infiltrada. Por otro lado, el caso 3 presenta una mayor longitud de línea de flujo, lo que se traduce en una menor cantidad de agua infiltrada.
+Para visualizar los tres casos de ataguías, se graficaron los diagramas a escala 1:200. En estos, se pueden observar las líneas de flujo (azules) y equipotenciales (verdes), las cuales permiten visualizar el comportamiento del agua alrededor de la ataguía. Es importante señalar que, en el caso 1, el agua tiene que recorrer una menor distancia para llegar al otro lado de la ataguía, lo que se traduce en una mayor cantidad de agua infiltrada. Por otro lado, el caso 3 presenta una mayor longitud de línea de flujo, lo que se traduce en una menor cantidad de agua infiltrada.
 
 \subsection{Presión de Poros}
 Para calcular la presión de poros en cada caso, se utilizó la fórmula (\ref{eq:presion_poros}). 
@@ -122,7 +125,7 @@ Para calcular la presión de poros en cada caso, se utilizó la fórmula (\ref{e
     \end{minipage}
 \end{figure}
 
-Como se puede observar, para el caso \ref{fig:caso_1_presion_poros} en la parte inferior de la ataguía se presenta una mayor presión de poros que en los otros dos casos, lo que se genera un mayor gradiente hidráulico, que podría producir licuefacción. Por otro lado, en los casos \ref{fig:caso_2_presion_poros} y \ref{fig:caso_3_presion_poros} se observa que la presión de poros es menor en la parte inferior de la ataguía, lo que se traduce en una menor presión hidráulica y mayor estabilidad.
+Como se puede observar, para el caso \ref{fig:caso_1_presion_poros}, en la parte inferior de la ataguía se presenta una mayor presión de poros que en los otros dos casos, lo que genera un mayor gradiente hidráulico que podría producir licuefacción. Por otro lado, en los casos \ref{fig:caso_2_presion_poros} y \ref{fig:caso_3_presion_poros}, se observa que la presión de poros es menor en la parte inferior de la ataguía, lo que se traduce en una menor presión hidráulica y mayor estabilidad.
 
 \subsubsection{Presiones Totales}
 
@@ -179,7 +182,7 @@ Para apreciar mejor el efecto de las presiones en la ataguía, se diagramaron la
 Como se puede observar, a medida que el nivel del suelo sube, la presión en el fondo de la ataguía disminuye, lo que se traduce en una menor presión efectiva. Esto es evidente en el caso \ref{fig:caso_1_presion_ataguia_neta}, donde la presión efectiva es mayor en la parte inferior de la ataguía, mientras que en el caso \ref{fig:caso_3_presion_ataguia_neta}, la presión efectiva es menor.
 
 \subsubsection{Estabilidad}
-Finalmente, para determinar la estabilidad de la ataguía se calculó el centroide de la ataguía en cada caso, basado en las presiones efectivas calculadas anteriormente.
+Finalmente, para determinar la estabilidad de la ataguía, se calculó el centroide de la ataguía en cada caso, basado en las presiones efectivas calculadas anteriormente.
 
 \begin{figure}[H]
     \centering
@@ -203,15 +206,15 @@ Finalmente, para determinar la estabilidad de la ataguía se calculó el centroi
     \end{minipage}
 \end{figure}
 
-Como se puede observar, en el caso \ref{fig:caso_1_centroide_y} el centroide se encuentra en una parte elevada de la ataguía. Esto genera un momento que tiende a voltear la ataguía, lo que conlleva a una menor estabilidad. Luego, a medida que el nivel de agua y suelo van aumentando el centroide se va desplazando hacia abajo, lo que lleva a una mayor estabilidad y seguridad. 
+Como se puede observar, en el caso \ref{fig:caso_1_centroide_y}, el centroide se encuentra en una parte elevada de la ataguía. Esto genera un momento que tiende a voltear la ataguía, lo que conlleva a una menor estabilidad. Luego, a medida que el nivel de agua y suelo van aumentando, el centroide se va desplazando hacia abajo, lo que lleva a una mayor estabilidad y seguridad. 
 
 \section{Análisis de Resultados}
 
-Luego de aplicar los cálculos expresaos en la sección de teoría, se obtuvieron los siguientes resultados para cada caso:
+Luego de aplicar los cálculos expresados en la sección de teoría, se obtuvieron los siguientes resultados para cada caso:
 
 \begin{table}[H]
     \begin{center}
-        \caption{Gradientes hidraulicos y caudales obtenidos manualmente.}
+        \caption{Gradientes hidráulicos y caudales obtenidos manualmente.}
         \begin{tabularx}{0.75\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
         \hline
         \textbf{Propiedades} & \textbf{Caso 1} & \textbf{Caso 2} & \textbf{Caso 3} & \textbf{Unidades} \\
@@ -219,7 +222,7 @@ Luego de aplicar los cálculos expresaos en la sección de teoría, se obtuviero
         $i_{max}$ & $1.095$ & $0.629$ & $0.380$ & $-$ \\
         $i_{crit}$ & $1.141$ & $1.141$ & $1.141$ & $-$ \\
         $FS$ & $1.041$ & $1.811$ & $2.999$ & $-$\\
-        $Q_{inf}$ & $43.877$ & $32.431$ & $25.754$ & $[\frac{m^3}{\text{dia}}]$\\
+        $Q_{inf}$ & $43.877$ & $32.431$ & $25.754$ & $[\frac{m^3}{\text{día}}]$\\
         $k$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $6.9 \times 10^{-5}$ & $[\frac{m}{s}]$\\
         \hline
         \end{tabularx}
@@ -227,9 +230,8 @@ Luego de aplicar los cálculos expresaos en la sección de teoría, se obtuviero
     \end{center}
 \end{table}
 
-Los resultados obtenidos muestran que el gradiente hidráulico máximo ($i_{max}$) disminuye en cada caso, lo que sugiere una reducción en el flujo de agua alrededor de la ataguía, mientras que el gradiente crítico ($i_{crit}$) permanece constante en $1.141$, indicando que las propiedades del suelo no cambian. El factor de seguridad (FS) mejora notablemente en los casos 2 y 3, pasando de $1.041$ en el primer caso a $2.999$ en el tercer caso, lo que sugiere una mayor estabilidad a medida que se reducen los gradientes. El caudal de infiltración ($Q_{inf}$) también disminuye de $43.877 \ \frac{m^3}{\text{día}}$ en el primer caso a $25.754 \ \frac{m^3}{\text{día}}$ en el tercer caso, lo que indica un mejor control del flujo de agua. Finalmente, el coeficiente de permeabilidad ($k$) se mantiene constante en $6.9 \times 10^{-5} \ \frac{m}{s}$, debido a que las propiedades del suelo no varían entre los casos.
+Los resultados obtenidos muestran que el gradiente hidráulico máximo ($i_{max}$) disminuye en cada caso, lo que sugiere una reducción en el flujo de agua alrededor de la ataguía, mientras que el gradiente crítico ($i_{crit}$) permanece constante en $1.141$, lo que indica que las propiedades del suelo no cambian. El factor de seguridad (FS) mejora notablemente en los casos 2 y 3, pasando de $1.041$ en el primer caso a $2.999$ en el tercer caso, lo que sugiere una mayor estabilidad a medida que se reducen los gradientes. El caudal de infiltración ($Q_{inf}$) también disminuye de $43.877 \ \frac{m^3}{\text{día}}$ en el primer caso a $25.754 \ \frac{m^3}{\text{día}}$ en el tercer caso, lo que indica un mejor control del flujo de agua. Finalmente, el coeficiente de permeabilidad ($k$) se mantiene constante en $6.9 \times 10^{-5} \ \frac{m}{s}$, debido a que las propiedades del suelo no varían entre los casos.
 
 \section{Fuentes de error}
 
 Al realizar los cálculos manualmente, se pueden presentar errores humanos al realizar las operaciones matemáticas, lo que podría afectar la precisión de los resultados. Además, la interpretación de los diagramas de flujo y equipotenciales puede ser subjetiva, lo que podría llevar a errores en la estimación de las propiedades del suelo. Por otro lado, al trabajar con un número reducido de líneas equipotenciales y de flujo, se pueden perder detalles importantes del flujo de agua alrededor de la ataguía, lo que podría afectar la precisión de los cálculos. 
-

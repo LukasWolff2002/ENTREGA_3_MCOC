@@ -2,7 +2,9 @@
 
 Finalmente, se implementó un modelo a escala en el que se buscó alcanzar la falla por licuefacción, calibrar el modelo de diferencias finitas y comparar los resultados obtenidos. El objetivo de esta sección es visualizar toda la teoría anteriormente expuesta, observando las líneas de flujo, el caudal de infiltración, entre otros.
 
-\section{Teoria}
+\section{Teoría}
+
+A continuación, se presentará la teoría utilizada para el cálculo en esta sección.
 
 \subsection{Escalamiento}
 El análisis dimensional se utiliza para estudiar cómo cambian las fuerzas y el flujo al escalar un sistema como una ataguía. Se utilizan grupos adimensionales como el número de Reynolds, Froude y Euler.
@@ -23,7 +25,6 @@ Donde:
 
 Mantener el número de Froude constante ayuda a asegurar que el flujo tenga un comportamiento similar en un modelo a escala.
 
-
 \subsection{Similitud en el Escalamiento}
 Para que un modelo a escala sea válido, se deben cumplir tres tipos de similitud:
 
@@ -35,9 +36,9 @@ Para que un modelo a escala sea válido, se deben cumplir tres tipos de similitu
 
 \subsection{Teorema de Buckingham $\pi$}
 
-El teorema de Buckingham $\pi$ es un metodo para el análisis dimensional. Nos permite simplificar un sistema físico reduciendo sus variables dimensionales a un conjunto menor de grupos adimensionales $\pi$. Si un sistema tiene $n$ variables dimensionales y $k$ dimensiones fundamentales (como longitud, masa, y tiempo), entonces el número de grupos adimensionales es $n - k$.
+El teorema de Buckingham $\pi$ es un método para el análisis dimensional. Nos permite simplificar un sistema físico reduciendo sus variables dimensionales a un conjunto menor de grupos adimensionales $\pi$. Si un sistema tiene $n$ variables dimensionales y $k$ dimensiones fundamentales (como longitud, masa y tiempo), entonces el número de grupos adimensionales es $n - k$.
 
-Para comenzar se debe encintrar una relación funcional entre las $n$ variables dimensionales:
+Para comenzar, se debe encontrar una relación funcional entre las $n$ variables dimensionales:
 
 \begin{equation}
 f(x_1, x_2, \ldots, x_n) = 0
@@ -57,22 +58,22 @@ Cada grupo $\pi$ es una combinación de las variables dimensionales del sistema,
 
 Los exponentes $a_1$, $a_2$, \ldots, $a_n$ se seleccionan de manera que las dimensiones de las variables se cancelen, haciendo que $\pi_1$ sea adimensional. El teorema asegura que cualquier relación física entre las variables dimensionales puede expresarse mediante estos grupos $\pi$, lo que facilita la simplificación y escalamiento de problemas físicos.
 
-\subsection{Permeabilidad Muestra de Suelo}
+\subsection{Permeabilidad de la Muestra de Suelo}
 
-Se define como permeabilidad aquella caracteristica del suelo que permite el paso del agua a travez de el \textbf{\cite{permeabilidad_suelos}}. Su unidades de medida son en Distancia/Tiemo donde existen diversas formas de estimar este coeficiente. En el caso de este proyecto, se midio un caudal con un gradiente hidraulico variable:
+La permeabilidad es aquella característica del suelo que permite el paso del agua a través de él \textbf{\cite{permeabilidad_suelos}}. Sus unidades de medida son distancia/tiempo, y existen diversas formas de estimar este coeficiente. En este proyecto, se midió un caudal con un gradiente hidráulico variable:
 
 \begin{equation}
-    k = \frac{a \cdot L}{A \cdot \Delta t} \cdot In(\frac{h1}{h2})
+    k = \frac{a \cdot L}{A \cdot \Delta t} \cdot \ln\left(\frac{h_1}{h_2}\right)
 \end{equation}
 
-Donde L corresponde a la altura de suelo, A el area transversal de suelo, $\Delta t$ el tiempo transcurrido, h1 y h2 las alturas de agua en el recipiente y a el ancho de la columna de agua.
+Donde \(L\) corresponde a la altura de suelo, \(A\) es el área transversal del suelo, \(\Delta t\) es el tiempo transcurrido, \(h_1\) y \(h_2\) son las alturas de agua en el recipiente, y \(a\) es el ancho de la columna de agua.
 
 \newpage
 \section{Resultados}
 
 \subsection{Cálculo de Permeabilidad de la Muestra}
 
-Para calcular la permeabilidad de la muestra se midio el tamiz que retuviera toda particula de suelo, de esta manera se puso un cono invertido sobre la malla, se agrego la muestra de suelo y se midio el tiempo que demoraba en pasar el agua. 
+Para calcular la permeabilidad de la muestra, se utilizó un tamiz que retuviera toda partícula de suelo. Se colocó un cono invertido sobre la malla, se agregó la muestra de suelo y se midió el tiempo que demoraba en pasar el agua.
 
 \begin{figure}[H]
     \centering
@@ -88,7 +89,7 @@ Para calcular la permeabilidad de la muestra se midio el tamiz que retuviera tod
     \end{minipage}
 \end{figure}
 
-La toma de datos se realizo de la siguiente manera (ver en Adobe Acrobat):
+La toma de datos se realizó de la siguiente manera (ver en Adobe Acrobat):
 
 \begin{center}
     \includemedia[
@@ -125,11 +126,11 @@ Donde los tiempos registrados fueron:
     $\Delta t_1$ & $\Delta t_2$ & $\Delta t_3$ & $\Delta t_4$ & $\Delta t_5$ \\ \hline
     12.6 & 12.03 & 12.34 & 13.05 & 13.0 \\ \hline
     \end{tabular}
-    \caption{Datos de Tiemp0 [s]}
+    \caption{Datos de Tiempo [s]}
     \label{tab:tiempos}
 \end{table}
 
-De esta forma es posible calcular la permeabilidad de la muestra resultando en:
+De esta forma, es posible calcular la permeabilidad de la muestra, resultando en:
 
 \begin{equation}
     k = 0.381 \text{cm/s} = 0.00381 \text{m/s}
@@ -137,8 +138,7 @@ De esta forma es posible calcular la permeabilidad de la muestra resultando en:
 
 \subsection{Modelo Escalado}
 
-Realizando la simulacion computacional con diferecnias finitas del modelo a escala, se obtiene un caudal de 0.00897 cm/s, considerando que el caudal real del modelo es de 1,144 $cm^3/s$ y su area transversal es de 138 $cm^2$, el caudal puntual
-es de 0.00828 cm/s, de esta forma, el porcentaje de error es de un \textbf{7.36\%}, lo cual es un valor mas que aceptable.
+Realizando la simulación computacional con diferencias finitas del modelo a escala, se obtiene un caudal de 0.00897 cm/s. Considerando que el caudal real del modelo es de 1.144 $cm^3/s$ y su área transversal es de 138 $cm^2$, el caudal puntual es de 0.00828 cm/s. De esta forma, el porcentaje de error es de un \textbf{7.36\%}, lo cual es un valor más que aceptable.
 
 \begin{figure}[H]
     \centering
@@ -147,19 +147,18 @@ es de 0.00828 cm/s, de esta forma, el porcentaje de error es de un \textbf{7.36\
     \label{fig:maqueta_caso_1}
 \end{figure}
 
-\subsubsection{Caudal escalado}
+\subsubsection{Caudal Escalado}
 
-Mediante la confirmacion del teorema de Buckingham $\pi$ se obtiene que el caudal del modelo a escala 1:1 es:
+Mediante la confirmación del teorema de Buckingham $\pi$, se obtiene que el caudal del modelo a escala 1:1 es:
 
 \begin{equation}
-    Q_{modelo} = Q_{prototopo} \cdot 1.1025 \cdot 10^{-4} = 1.144 \cdot 1.1025 \cdot 10^{-4} = 0.00012624 \text{m}^3/\text{s}
+    Q_{modelo} = Q_{prototipo} \cdot 1.1025 \cdot 10^{-4} = 1.144 \cdot 1.1025 \cdot 10^{-4} = 0.00012624 \text{m}^3/\text{s}
 \end{equation}
 
-%Realizando una simulacion con las medias escaladas (\ref{tab:medidas_escaladas})
-
+%Realizando una simulación con las medidas escaladas (\ref{tab:medidas_escaladas})
 
 \newpage
-\subsection{Licuefaccion}
+\subsection{Licuefacción}
 
 A continuación, se presenta un video (ver en Adobe Acrobat) de la falla observada por licuefacción en la maqueta a escala.
 
@@ -210,9 +209,8 @@ Además, se calculó el mismo caso utilizando diferencias finitas:
 
 \section{Fuentes de Error}
 
-En primer lugar, debido a la gran permeabilidad presentada por la muestra de suelo, se espera un pequeño error en la toma de tiempo. Ademas, la prueba no fue realizada en un cilindro, sino en un cono invertido, por lo que el caudal no es lineal segun la variacion de potencial hidraulico.
+En primer lugar, debido a la gran permeabilidad presentada por la muestra de suelo, se espera un pequeño error en la toma de tiempo. Además, la prueba no fue realizada en un cilindro, sino en un cono invertido, por lo que el caudal no es lineal según la variación de potencial hidráulico.
 \\ \\
-Por otro lado, la licuefaccion no ocurrio de manera natural, mas bien, se forzo la falla, por lo que el resultado puede no ser 100\% representativo de la realidad.
+Por otro lado, la licuefacción no ocurrió de manera natural, sino que se forzó la falla, por lo que el resultado puede no ser 100\% representativo de la realidad.
 \\ \\
 Considerando todos estos aspectos, se puede concluir que el modelo presentado de diferencias finitas es representativo de la realidad, y puede ser implementado en diferentes usos.
-
