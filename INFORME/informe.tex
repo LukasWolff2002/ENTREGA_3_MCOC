@@ -28,6 +28,9 @@
     urlcolor     = blue
 }
 
+%\usepackage{etoolbox}  % Carga este paquete en el preámbulo para modificar entornos de bibliografia
+%\patchcmd{\thebibliography}{\chapter*}{\part*}{}{}
+
 \usepackage{media9} % Permite la inserción de multimedia.
 
 % Paquetes para la mejora visual de tablas y figuras
@@ -190,7 +193,11 @@
 
 \include{anexos}
 
+\renewcommand{\refname}{}  % Para documentos tipo 'article'
+\renewcommand{\bibname}{}  % Para documentos tipo 'book' o 'report'
 \newpage
+\part{Referencias}  % Título de la bibliografía como un \part
+\vspace{-1cm}
 \bibliography{referencias}  % Nombre del archivo .bib
 
 \end{document}
