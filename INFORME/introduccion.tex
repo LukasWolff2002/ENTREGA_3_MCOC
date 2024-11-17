@@ -1,14 +1,33 @@
 \part{Introducción}
 
-Una ataguía es una estructura temporal utilizada para drenar zonas cubiertas de agua, lo que permite construir en terrenos que, de otra forma, serían inaccesibles \textbf{\cite{madanayaka2018}}. Al diseñar una ataguía, es fundamental considerar varios factores, como el caudal de infiltración, las presiones de poros, la estabilidad de la estructura y, sobre todo, la licuefacción y su factor de seguridad (FS). Este fenómeno ocurre cuando las presiones de poros alcanzan tal nivel que las tensiones internas efectivas entre las partículas del suelo disminuyen, haciendo que la mezcla de agua y sedimentos actúe como un fluido \textbf{\cite{sumer2009}}.
+Una ataguía es una estructura temporal utilizada para drenar zonas cubiertas de agua, 
+lo que permite construir en terrenos que, de otra forma, serían inaccesibles 
+\citep{madanayaka2018}. Al diseñar una ataguía, es fundamental considerar diversos 
+factores, como el caudal de infiltración, las presiones de poros, la estabilidad 
+de la estructura y, sobre todo, la licuefacción y su factor de seguridad (FS).
+ Este fenómeno ocurre cuando las presiones de poros alcanzan tal nivel que las 
+ tensiones internas efectivas entre las partículas del suelo disminuyen, lo que provoca 
+ que la mezcla de agua y sedimentos actúe como un fluido \citep{sumer2009}.
 \\ \\
-El presente proyecto tiene como objetivo el estudio y análisis de tres ataguías distintas, evaluando sus características mediante cálculos manuales a través de Python, un solver basado en diferencias finitas y un modelo a escala. De esta manera, se busca analizar la efectividad de cada método de análisis y realizar una comparación directa entre los resultados obtenidos.
+El presente proyecto tiene como objetivo el estudio y análisis de tres ataguías 
+distintas, evaluando sus características mediante cálculos manuales a través de \textit{Python}, 
+un \textit{solver} basado en diferencias finitas y un modelo a escala. De esta manera, se busca 
+analizar la efectividad de cada método de análisis y realizar una comparación directa entre
+ los resultados obtenidos.
 \\ \\
-En los cálculos manuales, se utilizó la Ley de Darcy, junto con las ecuaciones necesarias para determinar una red de flujo teórica. De esta forma, se calcularon parámetros como el caudal de infiltración y la presión de poros a lo largo de toda la estructura.
+En los cálculos manuales, se utilizó la Ley de Darcy, además de las ecuaciones necesarias
+ para determinar una red de flujo teórica. De esta forma, se calcularon parámetros como el
+  caudal de infiltración y la presión de poros a lo largo de toda la estructura.
 \\ \\
-Posteriormente, se desarrolló un solver mediante diferencias finitas, un método numérico utilizado para calcular diferencias de potencial en grillas 2D o 3D \textbf{\cite{zhang2005}}. Así, al determinar que el flujo va de un potencial mayor a uno menor, se pudieron obtener las redes de flujo y, con ello, los distintos parámetros necesarios.
+Posteriormente, se desarrolló un \textit{solver} mediante diferencias finitas, un método numérico 
+utilizado para calcular diferencias de potencial en grillas 2D o 3D \citep{zhang2005}. 
+Así, al determinar que el flujo va de un potencial mayor a uno menor, fue posible obtener 
+las redes de flujo y, con ello, los distintos parámetros necesarios.
 \\ \\
-Finalmente, se realizó un modelo a escala, en el que se simuló la ataguía y una falla por licuefacción. Además, se buscó calibrar el modelo computacional en base a los datos obtenidos del modelo real, determinando cuán efectivo es el cálculo numérico en comparación con la realidad.
+Finalmente, se realizó un modelo a escala, en el que se simuló la ataguía y una falla
+ por licuefacción. Además, se calibró el modelo computacional en base a los 
+ datos obtenidos del modelo real, para determinar cuán efectivo es el cálculo numérico 
+ en comparación con la realidad.
 \\ \\
 El modelo base utilizado a lo largo del informe es el siguiente:
 

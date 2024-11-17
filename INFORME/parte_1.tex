@@ -1,19 +1,19 @@
-\part{Cálculos Manuales}
+\part{Cálculos manuales}
 
-Esta sección tiene como objetivo modelar una ataguía utilizando redes de flujo y líneas equipotenciales graficadas a través de Python. De esta manera, se busca calcular factores como el caudal de infiltración, la presión de poros a lo largo de la ataguía, la estabilidad, la falla por licuefacción y el factor de seguridad. Todos estos cálculos fueron realizados con Python, lo que permitió efectuar un análisis más exhaustivo y preciso en los distintos casos.
+Esta sección tiene como objetivo modelar una ataguía mediante el empleo de redes de flujo y líneas equipotenciales graficadas a través de \textit{Python}. De esta manera, se busca calcular factores como el caudal de infiltración, la presión de poros a lo largo de la ataguía, la estabilidad, la falla por licuefacción y el factor de seguridad. Todos estos cálculos fueron realizados con \textit{Python}, lo que permitió efectuar un análisis más exhaustivo y preciso en los distintos casos.
 
 \section{Teoría}
 
 A continuación, se presentará la teoría utilizada para el cálculo en esta sección.
 
-\subsection{Líneas de Flujo}
-Las líneas de flujo representan las trayectorias que siguen las partículas de agua al moverse a través de un medio poroso. En un diagrama de flujo, estas líneas son perpendiculares a las líneas equipotenciales y muestran la dirección del flujo subterráneo o de infiltración. En estructuras como las ataguías, las líneas de flujo se usan para predecir el comportamiento del agua alrededor y debajo de la estructura, ayudando a diseñar sistemas eficaces de control de agua. \textbf{\cite{structville}}
+\subsection{Líneas de flujo}
+Las líneas de flujo representan las trayectorias que siguen las partículas de agua al moverse a través de un medio poroso. En un diagrama de flujo, estas líneas son perpendiculares a las líneas equipotenciales y muestran la dirección del flujo subterráneo o de infiltración. En estructuras como las ataguías, las líneas de flujo se usan para predecir el comportamiento del agua alrededor y debajo de la estructura, ayudando a diseñar sistemas eficaces de control de agua \citep{structville}.
 
-\subsection{Líneas Equipotenciales}
-Las líneas equipotenciales representan ubicaciones con igual carga hidráulica, lo que significa que no hay diferencia de energía a lo largo de ellas. En problemas de flujo de agua subterránea, como los relacionados con las ataguías, estas líneas ayudan a visualizar la distribución de la energía potencial dentro del agua. Son fundamentales para determinar el caudal de agua y asegurar que esta no desestabilice estructuras como los diques o presas. \textbf{\cite{structville}}
+\subsection{Líneas equipotenciales}
+Las líneas equipotenciales representan ubicaciones con igual carga hidráulica, lo que significa que no se identifica diferencia de energía a lo largo de ellas. En problemas de flujo de agua subterránea, como los relacionados con las ataguías, estas líneas ayudan a visualizar la distribución de la energía potencial dentro del agua. Así, fundamentales para determinar el caudal de agua y asegurar que esta no desestabilice estructuras como los diques o presas \citep{structville}.
 
-\subsection{Caudal de Infiltración}
-El caudal de infiltración es el flujo de agua que penetra a través del suelo debido a la diferencia de presión entre el nivel de agua dentro y fuera de la ataguía. La tasa de infiltración está condicionada por la permeabilidad del suelo y la diferencia de carga hidráulica. Para calcular el caudal de infiltración, se utiliza la fórmula (\ref{eq:caudal_infiltracion}). \textbf{\cite{stability_cofferdam_2024}}
+\subsection{Caudal de infiltración}
+El caudal de infiltración es el flujo de agua que penetra a través del suelo debido a la diferencia de presión entre el nivel de agua dentro y fuera de la ataguía. La tasa de infiltración está condicionada por la permeabilidad del suelo y la diferencia de carga hidráulica. Para calcular el caudal de infiltración, se utiliza la fórmula (\ref{eq:caudal_infiltracion}) \citep{stability_cofferdam_2024}:
 
 \begin{equation}
     Q = k \cdot \frac{\Delta H}{N_{f}} \cdot N_{d}
@@ -29,8 +29,8 @@ Donde:
     \item $N_{d}$ = Cantidad de canales equipotenciales
 \end{itemize}
 
-\subsection{Presión de Poros}
-La presión de poros es la fuerza que el agua ejerce dentro de los poros de un material, como el suelo o la roca. Juega un papel crucial en la construcción en terrenos con agua o alto nivel freático, ya que una presión de poros excesiva puede reducir el esfuerzo efectivo en el suelo, lo que podría ocasionar problemas como la licuefacción, donde el suelo pierde firmeza, o la formación de tuberías subterráneas. En las ataguías, la presión de poros es un factor clave, ya que afecta la estabilidad del terreno que rodea la estructura. Para calcular la presión de poros, se utiliza la siguiente fórmula. \textbf{\cite{jeas}}
+\subsection{Presión de poros}
+La presión de poros es la fuerza que el agua ejerce dentro de los poros de un material, como el suelo o la roca. Juega un papel crucial en la construcción en terrenos con agua o alto nivel freático, ya que una presión de poros excesiva puede reducir el esfuerzo efectivo en el suelo. Lo anterior podría ocasionar problemas como la licuefacción, en el cual el suelo pierde firmeza, o la formación de tuberías subterráneas. En las ataguías, la presión de poros es un factor clave, ya que afecta la estabilidad del terreno que rodea la estructura. Para calcular la presión de poros, se utiliza la siguiente fórmula \citep{jeas}.
 
 \begin{equation}
     u = \gamma \cdot h
@@ -44,8 +44,8 @@ Donde:
     \item $h$ = Profundidad del agua
 \end{itemize}
 
-\subsection{Gradiente Hidráulico}
-El gradiente hidráulico es el cambio de la carga hidráulica por unidad de distancia en la dirección del flujo. Es un factor crucial para determinar el flujo de agua a través de suelos. En el diseño de ataguías, el gradiente hidráulico ayuda a predecir problemas como la licuefacción, donde los gradientes elevados pueden erosionar el suelo y causar fallos estructurales. Este se calcula con la fórmula (\ref{eq:gradiente_hidraulico}). \textbf{\cite{budhu_soil_2010}}
+\subsection{Gradiente hidráulico}
+El gradiente hidráulico equivale a el cambio de la carga hidráulica por unidad de distancia en la dirección del flujo. Constituye un factor crucial para determinar el flujo de agua a través de suelos. En el diseño de ataguías, el gradiente hidráulico ayuda a predecir problemas como la licuefacción, donde los gradientes elevados pueden erosionar el suelo y causar fallos estructurales. Este se calcula con la fórmula (\ref{eq:gradiente_hidraulico}) \citep{budhu_soil_2010}.
 
 \begin{equation}
     i = \frac{\Delta h}{\Delta L}
@@ -60,15 +60,15 @@ Donde:
 \end{itemize}
 
 \subsubsection{Licuefacción}
-La licuefacción se genera cuando se excede el gradiente hidráulico crítico (\ref{eq:gradiente_critico}), lo que provoca que el suelo pierda su capacidad de soporte y se comporte como un líquido. En el diseño de ataguías, la licuefacción es un problema grave, ya que puede causar el colapso de la estructura y daños significativos a la infraestructura circundante. \textbf{\cite{budhu_soil_2010}}
+La licuefacción se produce cuando se excede el gradiente hidráulico crítico (\ref{eq:gradiente_critico}), lo que provoca que el suelo pierda su capacidad de soporte y se comporte como un líquido. En el diseño de ataguías, la licuefacción es un problema grave, ya que puede causar el colapso de la estructura y daños significativos a la infraestructura circundante \citep{budhu_soil_2010}.
 
 \begin{equation}
     i_{critico} = \frac{\Delta h}{L_{min}}
     \label{eq:gradiente_critico}
 \end{equation}
 
-\subsection{Presión en una Ataguía}
-La presión dentro y alrededor de una ataguía es resultado tanto del nivel de agua como de las condiciones del suelo. El diseño de una ataguía implica calcular la caída de carga potencial, la presión de poros y el gradiente hidráulico, lo que permite predecir si la estructura soportará las presiones del agua y del suelo que actúan sobre ella. Las redes de flujo se utilizan para evaluar estas presiones y estimar la infiltración de agua a través de la cimentación. \cite{sivakugan2005}
+\subsection{Presión en una ataguía}
+La presión dentro y alrededor de una ataguía es resultado tanto del nivel de agua como de las condiciones del suelo. Debido a estos, el diseño de una ataguía implica calcular la caída de carga potencial, la presión de poros y el gradiente hidráulico, lo que permite predecir si la estructura soportará las presiones del agua y del suelo que actúan sobre ella. Las redes de flujo se utilizan para evaluar estas presiones y estimar la infiltración de agua a través de la cimentación \citep{sivakugan2005}.
 
 \section{Resultados}
 
@@ -80,18 +80,21 @@ La presión dentro y alrededor de una ataguía es resultado tanto del nivel de a
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1.jpg}
         \caption{Caso 1}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_1}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2.jpg}
         \caption{Caso 2}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_2}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3.jpg}
         \caption{Caso 3}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_3}
     \end{minipage}
 \end{figure}
@@ -109,18 +112,21 @@ Para calcular la presión de poros en cada caso, se utilizó la fórmula (\ref{e
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_poros.jpg}
         \caption{Caso 1 Presión de Poros}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_1_presion_poros}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_poros.jpg}
         \caption{Caso 2 Presión de Poros}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_2_presion_poros}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_poros.jpg}
         \caption{Caso 3 Presión de Poros}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_3_presion_poros}
     \end{minipage}
 \end{figure}
@@ -135,18 +141,21 @@ Como se puede observar, para el caso \ref{fig:caso_1_presion_poros}, en la parte
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_ataguia_total.jpg}
         \caption{Caso 1 Presión Ataguía Total}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_1_presion_ataguia_total}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_ataguia_total.jpg}
         \caption{Caso 2 Presión Ataguía Total}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_2_presion_ataguia_total}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_ataguia_total.jpg}
         \caption{Caso 3 Presión Ataguía Total}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_3_presion_ataguia_total}
     \end{minipage}
 \end{figure}
@@ -163,18 +172,21 @@ Para apreciar mejor el efecto de las presiones en la ataguía, se diagramaron la
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1_presion_ataguia_neta.jpg}
         \caption{Caso 1 Presión Ataguía Neta}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_1_presion_ataguia_neta}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2_presion_ataguia_neta.jpg}
         \caption{Caso 2 Presión Ataguía Neta}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_2_presion_ataguia_neta}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3_presion_ataguia_neta.jpg}
         \caption{Caso 3 Presión Ataguía Neta}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_3_presion_ataguia_neta}
     \end{minipage}
 \end{figure}
@@ -190,18 +202,21 @@ Finalmente, para determinar la estabilidad de la ataguía, se calculó el centro
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_1_centroide_y.jpg}
         \caption{Caso 1 Centroide}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_1_centroide_y}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_2_centroide_y.jpg}
         \caption{Caso 2 Centroide}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_2_centroide_y}
     \end{minipage}
     \begin{minipage}{0.32\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GRAFICOS/caso_3_centroide_y.jpg}
         \caption{Caso 3 Centroide}
+        \text{Fuente:Elaboración propia}
         \label{fig:caso_3_centroide_y}
     \end{minipage}
 \end{figure}
