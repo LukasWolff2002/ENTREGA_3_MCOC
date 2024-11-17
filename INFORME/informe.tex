@@ -3,8 +3,10 @@
 % Paquetes de idioma y codificación
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}  % Ajusta el idioma del documento a español.
+\usepackage[spanish, es-tabla]{babel}  % Ajusta el idioma del documento a español.
 \usepackage{tabularx}  % Permite la creación de tablas con ancho ajustable.
+
+\renewcommand{\theequation}{Ec.~\arabic{equation}}  % Cambia la numeración de las ecuaciones.
 
 % Paquete de geometría para configurar márgenes y tamaño de papel
 \usepackage[letterpaper, margin=3cm]{geometry}
