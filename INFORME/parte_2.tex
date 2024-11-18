@@ -1,4 +1,4 @@
-\part{Diferencias Finitas}
+\part{Diferencias finitas}
 
 Para mejorar la precisión de los resultados, se implementó un modelo de diferencias finitas aplicado a la matriz de potencial hidráulico. De esta manera, se pueden calcular las líneas de flujo, obteniendo así el caudal de infiltración. El objetivo principal es determinar la efectividad de este método frente a un proceso más simple, como el cálculo manual expuesto en la sección anterior.
 
@@ -32,6 +32,7 @@ Se define la entrada al sistema como:
     \centering
     \includegraphics[width=0.5\textwidth]{FOTOS/in.jpg}
     \caption{Entrada al sistema}
+    \text{Fuente: Elaboración propia}
     \label{fig:ley_darcy_in}
 \end{figure}
 
@@ -47,6 +48,7 @@ Por lo tanto, lo que sale del sistema es:
     \centering
     \includegraphics[width=0.5\textwidth]{FOTOS/out.jpg}
     \caption{Salida del sistema}
+    \text{Fuente: Elaboración propia}
     \label{fig:ley_darcy_out}
 \end{figure}
 
@@ -112,21 +114,21 @@ Se obtiene:
 
 De esta forma, podemos representar el laplaciano mediante diferencias finitas. \textbf{\cite{budhu_soil_2010}}
 
-\subsection{Diferencias Finitas}
+\subsection{Diferencias finitas}
 
-\subsubsection{Diferencias Hacia Adelante}
+\subsubsection{Diferencias hacia adelante}
 
 \begin{equation}
     h(x + \Delta x) = h(x) + \frac{dh}{dx} \Delta x + ...
 \end{equation}
 
-\subsubsection{Diferencias Hacia Atrás}
+\subsubsection{Diferencias hacia atrás}
 
 \begin{equation}
     h(x - \Delta x) = h(x) - \frac{dh}{dx} \Delta x + ...
 \end{equation}
 
-\subsubsection{Diferencias Centrales}
+\subsubsection{Diferencias centrales}
 
 La suma de las diferencias hacia adelante y hacia atrás es:
 
@@ -150,6 +152,7 @@ Esto se puede llevar a una grilla:
     \centering
     \includegraphics[width=0.5\textwidth]{FOTOS/grilla.jpg}
     \caption{Grilla}
+    \text{Fuente: Elaboración propia}
 \end{figure}
 
 Donde se puede representar la ecuación de Laplace como:
@@ -174,16 +177,16 @@ Donde se busca:
     h_{i,j} = \frac{1}{4}(h_{i+1,j} + h_{i-1,j} + h_{i,j+1} + h_{i,j-1})
 \end{equation}
 
-De esta forma, es posible obtener las variaciones en el potencial a partir de los datos conocidos en la grilla (condiciones de borde). \textbf{\cite{budhu_soil_2010}}
+De esta forma, es posible obtener las variaciones en el potencial a partir de los datos conocidos en la grilla (condiciones de borde). \citep{budhu_soil_2010}
 
-\subsection{Implementacion de Diferencias Finitas}
+\subsection{Implementacion de diferencias finitas}
 
-Para implementar este método, es necesario lograr que las paredes y la ataguía actúen como barreras impermeables, de manera que la variación de potencial sea cero en esos lugares. Además, se establecen dos condiciones de borde: el inicio y el fin del flujo hidráulico, donde se especifica el gradiente hidráulico en cada caso. De este modo, el flujo se desplaza desde un gradiente mayor hacia uno menor.
+Al implementar este método, es necesario lograr que las paredes y la ataguía actúen como barreras impermeables, de manera que la variación de potencial sea cero en esos lugares. Además, se establecen dos condiciones de borde: el inicio y el fin del flujo hidráulico, donde se especifica el gradiente hidráulico en cada caso. De este modo, el flujo se desplaza desde un gradiente mayor hacia uno menor.
 
 
 \newpage
 
-\section{Resultados usando Diferencias Finitas}
+\section{Resultados usando diferencias finitas}
 Luego de implementar el método de diferencias finitas, se obtuvieron los siguientes resultados para los casos planteados en la sección anterior.
 \subsection{Caso 1}
 
@@ -191,10 +194,11 @@ Luego de implementar el método de diferencias finitas, se obtuvieron los siguie
     \centering
     \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_1.jpg}
     \caption{Caso 1 Laplace}
+    \text{Fuente: Elaboración propia}
     \label{fig:laplace_caso_1}
 \end{figure}
 
-Como se puede apreciar en la figura \ref{fig:laplace_caso_1}, tiene el mayor potencial hidráulico abajo de la ataguía, lo cual conlleva a un caudal de infiltración mayor que en los otros casos.
+Como aprecia en la figura \ref{fig:laplace_caso_1}, se cuanta con el mayor potencial hidráulico abajo de la ataguía, lo cual conlleva a un caudal de infiltración mayor que en los otros casos.
 
 \subsection{Caso 2}
 
@@ -202,10 +206,11 @@ Como se puede apreciar en la figura \ref{fig:laplace_caso_1}, tiene el mayor pot
     \centering
     \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_2.jpg}
     \caption{Caso 2 Laplace}
+    \text{Fuente: Elaboración propia}
     \label{fig:laplace_caso_2}
 \end{figure}
 
-Para el caso 2, se observa que se ocupó el mismo modelo, pero se cambiaron las dimensiones y potenciales hidráulicos. Este cambio se puede observar en la distribución de la matriz \(K\) y en la matriz de potenciales. Además, en este caso, el potencial hidráulico abajo de la ataguía es menor.
+Para el caso 2, se observa que se ocupó el mismo modelo, pero se modificaron las dimensiones y potenciales hidráulicos. Este cambio se puede apreciar en la distribución de la matriz \(K\) y en la matriz de potenciales. Además, en este caso, el potencial hidráulico abajo de la ataguía es menor.
 
 \subsection{Caso 3}
 
@@ -213,16 +218,17 @@ Para el caso 2, se observa que se ocupó el mismo modelo, pero se cambiaron las 
     \centering
     \includegraphics[width=\textwidth]{GRAFICOS/laplace_caso_3.jpg}
     \caption{Caso 3 Laplace}
+    \text{Fuente: Elaboración propia}
     \label{fig:laplace_caso_3}
 \end{figure}
 
-Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del problema, la distribución de la matriz \(k\) y los potenciales hidráulicos. En este caso, el potencial hidráulico abajo de la ataguía es el menor de los tres casos, lo cual conlleva a un caudal de infiltración menor.
+Finalmente, en la figura \ref{fig:laplace_caso_3} se modificó la geometría del problema, la distribución de la matriz \(k\) y los potenciales hidráulicos. En este caso, el potencial hidráulico abajo de la ataguía es el menor de los tres casos, lo cual conlleva a un caudal de infiltración menor.
 
 \section{Análisis de Resultados}
 
 \begin{table}[H]
     \centering
-    \caption{Caudales obtenidos mediante análisis analítico y diferencias finitas.}
+    \caption{Caudales obtenidos mediante análisis analítico y diferencias finitas}
     \vspace{0.5cm}
     \begin{tabular}{cccc}
         \hline
@@ -233,9 +239,10 @@ Finalmente, en la figura \ref{fig:laplace_caso_3} se cambiaron la geometría del
         3 & $0.57$ & $0.66$ & $15.8$ \\
         \hline
     \end{tabular}
+    \text{Fuente: Elaboración propia}
     \label{tab:Diferencias1}
 \end{table}
 
 El método de diferencias finitas es una opción de cálculo más precisa que el método manual, ya que incorpora cada parte de la ataguía infinitesimalmente, calculando las presiones de manera más homogénea. Como resultado, se obtuvieron caudales menores y más representativos para cada caso, siendo los casos 1 y 2 caudales relativamente cercanos debido a que la altura de agua en ambos lados de la ataguía es la misma.
 \\ \\
-\textbf{Nota:} Se ocupa caudal por unidad lineal, ya que de esta manera se puede realizar una comparación mucho más objetiva para todo tipo de ataguía. Para obtener el caudal total, ...
+\textbf{Nota:} Se ocupa caudal por unidad lineal, ya que de esta manera se puede realizar una comparación mucho más objetiva para todo tipo de ataguía. 
